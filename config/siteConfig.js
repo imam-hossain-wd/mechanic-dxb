@@ -8,12 +8,13 @@ export const SiteConfig = {
   url: "https://www.carrepairmechanicdubai.com",
   email: "carrepairmechanicdubai@gmail.com",
   description: "Broke down? Get Dubai's #1 mobile mechanic at your doorstep in 5 to 15 mins. We provide 24/7 car repair, battery replacement & AC service across Dubai. Fast, reliable, and affordable auto repair wherever you are in the city.",
-  displayNumber: "+971 55 183 1901",
+  displayNumber: "+971 55 000 0000",
   numberCallLink: "tel:+971551831901",
   whatsappCallLink: "https://wa.me/971551831901",
 
   // অ্যাড্রেস এবং লোকেশন ডাটা ফিক্সড ও সিঙ্কড
-  location: "Umm Hurair Rd, Oud Metha, Dubai, United Arab Emirates",
+  location: "Al Mankhool, Dubai, United Arab Emirates",
+  // location: "Umm Hurair Rd, Oud Metha, Dubai, United Arab Emirates",
   streetAddress: "Umm Hurair Rd, Oud Metha",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
