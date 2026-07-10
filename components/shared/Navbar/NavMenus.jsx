@@ -1,6 +1,5 @@
 "use client"
-
-// import { services } from "@/data/services/services";
+import { services } from "@/data/services/services";
 import { ChevronDown, Wrench } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
@@ -80,38 +79,16 @@ const Dropdown = ({ title, items, icon: Icon, href, isOpen, onToggle, onClose })
     );
 };
 
-// const navServiceItems = services?.slice(0, 10).map((service) => ({
-//     name: service.name,
-//     slug: service.slug,
-// }))
+const navServiceItems = services?.slice(0, 10).map((service) => ({
+    name: service.name,
+    slug: service.slug,
+}))
 
-const ServiceItems = [
-    {
-        name: "Car Repair",
-        slug: "car-repair",
-    },
-    {
-        name: "Car Mechanic",
-        slug: "car-mechanic",
-    },
-    {
-        name: "Car Battery Replacement",
-        slug: "car-battery-replacement",
-    },
-    {
-        name: "Car Ac Repair",
-        slug: "car-ac-repair",
-    },
-    {
-        name: "Car Maintenance",
-        slug: "car-maintenance",
-    },
-   
-]
+
 
 export const mobileNavItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services", icon: Wrench, dropdown: ServiceItems },
+    { name: "Services", href: "/services", icon: Wrench, dropdown: navServiceItems },
     { name: "Area We Serve", href: "/area-we-serve" },
     { name: "Brands", href: "/brands" },
     { name: "Contact", href: "/contact" },
@@ -151,7 +128,7 @@ export const DesktopNav = ({ pathname }) => {
             <Dropdown
                 title="Services"
                 href="/services"
-                items={ServiceItems}
+                items={navServiceItems}
                 isOpen={openDropdown === "services"}
                 onToggle={() => handleDropdownToggle("services")}
                 onClose={handleDropdownClose}
