@@ -1,7 +1,8 @@
 
+import { socialIcons } from "@/utils/assets";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-
+const { facebook, instagram, pinterest, youtube } = socialIcons;
 export const SiteConfig = {
   authorName: "Md Bappi",
   brandName: "Car Repair Dubai",
@@ -81,10 +82,10 @@ export const SiteConfig = {
   ],
 
   socialLinks: [
-    { name: "Facebook", icon: "", href: "https://www.facebook.com/carrepairmechanicdubai/" },
-    { name: "Instagram", icon: "", href: "https://www.instagram.com/carrepairmechanicdubai/" },
-    { name: "Pinterest", icon: "", href: "https://www.pinterest.com/carrepairmechanicdubai/" },
-    { name: "YouTube", icon: "", href: "https://www.youtube.com/@carrepairmechanicdubai" }
+    { name: "Facebook", icon: facebook, href: "https://www.facebook.com/carrepairmechanicdubai/" },
+    { name: "Instagram", icon: instagram, href: "https://www.instagram.com/carrepairmechanicdubai/" },
+    { name: "Pinterest", icon: pinterest, href: "https://www.pinterest.com/carrepairmechanicdubai/" },
+    { name: "YouTube", icon: youtube, href: "https://www.youtube.com/@carrepairmechanicdubai" }
   ],
 
   contactLinks: [

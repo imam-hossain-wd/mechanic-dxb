@@ -83,13 +83,13 @@ export function Footer() {
                              Car Mechanic
                         </Link>
 
-                        <dib className="">
+                        <div className="">
                             <p className="text-md text-white mt-2">Professional Auto Care</p>
 
                             <p className="text-sm text-white mt-1 mb-5">
                                 Your trusted mobile car repair service in Dubai. Professional, reliable, and available 24/7 for all your automotive needs.
                             </p>
-                        </dib>
+                        </div>
 
                         {/* Trust Badges */}
                         <div className="flex flex-wrap gap-2">
@@ -269,7 +269,7 @@ export function Footer() {
                                         >
                                             <div className="p-3 bg-white/5 rounded-xl hover:bg-primary transition-all duration-300 hover:scale-110 border border-white/10 hover:border-primary/50">
                                                 {/* <Icon className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /> */}
-                                                <Image className="w-7 h-7" src={social?.icon} width={30} height={30} alt={social.name} />
+                         <Image className="w-7 h-7" src={social?.icon} width={30} height={30} alt={social.name} />
                                             </div>
                                         </Link>
                                     );
