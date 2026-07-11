@@ -1,20 +1,16 @@
 // components/sections/ServicesSection.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Wrench, Clock, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import { ServiceCard } from "@/components/ui/ServiceCard";
-// import { services } from "@/data/services";
-import { cn } from "@/lib/utils";
 import React from "react";
 import { services } from "@/data/services/services";
 import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
 
 export default function ServicesSection() {
     const [visibleServices, setVisibleServices] = useState(services.slice(0, 8));
-    const [isLoading, setIsLoading] = useState(false);
 
     // Features stats
     const stats = [
@@ -28,9 +24,9 @@ export default function ServicesSection() {
         <section className="relative overflow-hidden bg-background py-10">
             {/* Modern Background */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
-                <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl" />
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]" />
+                <div className="absolute right-0 top-0 h-125 w-125 rounded-full bg-primary/5 blur-3xl" />
+                <div className="absolute bottom-0 left-0 h-100 w-100 rounded-full bg-primary/5 blur-3xl" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[40px_40px]" />
             </div>
 
             <div className="container mx-auto px-4">
