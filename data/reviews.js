@@ -59,7 +59,7 @@ export const reviews = [
     name: "Lisa Chen",
     location: "Dubai Silicon Oasis",
     rating: 5,
-    review: "Very impressed with their service. Came to my office, fixed the oil change and inspection in under an hour. Professional and reliable.",
+    review: "Very impressed with their service. Came to my office, completed the oil change and inspection in under an hour. Professional and reliable.",
     service: "Oil Change",
     date: "3 weeks ago",
     avatar: "L",
@@ -85,6 +85,138 @@ export const reviews = [
     service: "AC Service",
     date: "1 month ago",
     avatar: "E",
+    verified: true
+  },
+  {
+    id: 9,
+    name: "Ali Khan",
+    location: "Al Barsha",
+    rating: 5,
+    review: "Outstanding roadside assistance. My car wouldn't start before work and the technician reached me in less than 25 minutes. Excellent customer service.",
+    service: "Car Battery Jump Start",
+    date: "1 month ago",
+    avatar: "A",
+    verified: true
+  },
+  {
+    id: 10,
+    name: "Jessica Brown",
+    location: "Palm Jumeirah",
+    rating: 5,
+    review: "Very honest and skilled mechanic. They fixed my brake pads at home and the entire process was smooth. Fair prices with no hidden charges.",
+    service: "Brake Pad Replacement",
+    date: "1 month ago",
+    avatar: "J",
+    verified: true
+  },
+  {
+    id: 11,
+    name: "Yousef Al Mansoori",
+    location: "Mirdif",
+    rating: 5,
+    review: "Booked an engine diagnostic online and they arrived on time. They found the issue immediately and repaired it the same day. Fantastic experience.",
+    service: "Engine Repair",
+    date: "1 month ago",
+    avatar: "Y",
+    verified: true
+  },
+  {
+    id: 12,
+    name: "Maria Garcia",
+    location: "Dubai Hills",
+    rating: 5,
+    review: "The mechanic explained everything clearly before starting the repair. My car AC is working perfectly again. Highly professional team.",
+    service: "Car AC Repair",
+    date: "5 weeks ago",
+    avatar: "M",
+    verified: true
+  },
+  {
+    id: 13,
+    name: "Abdullah Saeed",
+    location: "Deira",
+    rating: 5,
+    review: "Quick oil change service at my office parking. Saved me a lot of time and the quality of work was excellent. Definitely using them again.",
+    service: "Mobile Oil Change",
+    date: "6 weeks ago",
+    avatar: "A",
+    verified: true
+  },
+  {
+    id: 14,
+    name: "Sophie Martin",
+    location: "Arabian Ranches",
+    rating: 5,
+    review: "Professional team with excellent communication. They replaced my battery quickly and checked the electrical system as well. Great value for money.",
+    service: "Battery Replacement",
+    date: "6 weeks ago",
+    avatar: "S",
+    verified: true
+  },
+  {
+    id: 15,
+    name: "Hassan Qureshi",
+    location: "Al Nahda",
+    rating: 5,
+    review: "I was stranded late at night and they reached me faster than expected. Friendly technician and the repair was completed without any hassle.",
+    service: "Roadside Assistance",
+    date: "2 months ago",
+    avatar: "H",
+    verified: true
+  },
+  {
+    id: 16,
+    name: "Natalie Evans",
+    location: "Dubai Sports City",
+    rating: 5,
+    review: "Excellent mobile mechanic service. They replaced my spark plugs and performed a complete inspection. My car drives much smoother now.",
+    service: "Car Maintenance",
+    date: "2 months ago",
+    avatar: "N",
+    verified: true
+  },
+  {
+    id: 17,
+    name: "Faisal Rahman",
+    location: "International City",
+    rating: 5,
+    review: "Very responsive team with transparent pricing. They fixed my overheating problem quickly and even provided maintenance tips afterward.",
+    service: "Radiator Repair",
+    date: "2 months ago",
+    avatar: "F",
+    verified: true
+  },
+  {
+    id: 18,
+    name: "Rachel Green",
+    location: "Bluewaters Island",
+    rating: 5,
+    review: "Booked them for a pre-purchase inspection. They checked every detail and gave an honest report. Their expertise helped me make the right decision.",
+    service: "Vehicle Inspection",
+    date: "2 months ago",
+    avatar: "R",
+    verified: true
+  },
+  {
+    id: 19,
+    name: "Majid Al Falasi",
+    location: "Al Quoz",
+    rating: 5,
+    review: "The technician arrived exactly on time and repaired my alternator efficiently. Friendly staff, quality workmanship, and excellent service overall.",
+    service: "Alternator Repair",
+    date: "3 months ago",
+    avatar: "M",
+    verified: true
+  },
+  {
+    id: 20,
+    name: "Daniel Cooper",
+    location: "Jumeirah",
+    rating: 5,
+    review: "I've used their mobile mechanic service twice now and both experiences were outstanding. Reliable, affordable, and very professional. Highly recommended!",
+    service: "General Car Repair",
+    date: "3 months ago",
+    avatar: "D",
     verified: true
   }
 ];

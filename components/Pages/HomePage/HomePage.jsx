@@ -1,5 +1,6 @@
 
 import AboutSection from '@/components/view/AboutSection/AboutSection'
+import { ClientReviewsSection } from '@/components/view/ClientReviewsSection/ClientReviewsSection'
 import HomeHero from '@/components/view/Hero/HomeHero'
 import { Maps } from '@/components/view/Map/Map'
 import ServicesSection from '@/components/view/ServicesSection/ServicesSection'
@@ -15,6 +16,7 @@ export default function HomePage() {
             <AboutSection />
             <WhyChooseUsSection />
             <Maps />
+            <ClientReviewsSection />
         </div>
     )
 }
