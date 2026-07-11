@@ -296,36 +296,6 @@ export function Footer() {
                             </p>
                         </div>
 
-                        {/* Newsletter Subscription */}
-                        <div className="p-5 bg-linear-to-br from-primary/15 to-primary/5 rounded-2xl border border-primary/20">
-                            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                                <Send className="h-4 w-4 text-primary" />
-                                Newsletter
-                            </h3>
-                            <p className="text-xs text-gray-300 mb-3">
-                                Get updates about offers, tips & new services
-                            </p>
-                            <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-                                <input
-                                    type="email"
-                                    placeholder="Your email address"
-                                    className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    className="w-full px-3 py-2 bg-primary hover:bg-primary/90 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
-                                >
-                                    Subscribe
-                                    <Send className="h-3.5 w-3.5" />
-                                </button>
-                            </form>
-                            <p className="text-xs text-gray-400 mt-2">
-                                No spam, unsubscribe anytime.
-                            </p>
-                        </div>
-
-
                     </div>
                 </div>
 
