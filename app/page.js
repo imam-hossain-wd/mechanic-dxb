@@ -1,12 +1,7 @@
+import HomePage from '@/components/Pages/HomePage/HomePage'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 
-export default function page() {
-  return (
-    <div>Car Repair Services dubai
-
-
-      <Button>hello </Button>
-    </div>
-  )
+export default function Home() {
+  return <HomePage />
 }

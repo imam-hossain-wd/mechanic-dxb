@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export const SiteConfig = {
   authorName: "Md Bappi",
-  brandName: "Car Repair Mechanic Dubai",
+  brandName: "Car Mechanic Dubai",
   url: "https://www.carrepairmechanicdubai.com",
   email: "carrepairmechanicdubai@gmail.com",
   description: "Broke down? Get Dubai's #1 mobile mechanic at your doorstep in 5 to 15 mins. We provide 24/7 car repair, battery replacement & AC service across Dubai. Fast, reliable, and affordable auto repair wherever you are in the city.",
