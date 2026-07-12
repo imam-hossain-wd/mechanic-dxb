@@ -1,4 +1,3 @@
-
 import AboutSection from '@/components/view/AboutSection/AboutSection'
 import { ClientReviewsSection } from '@/components/view/ClientReviewsSection/ClientReviewsSection'
 import { FAQSection } from '@/components/view/FAQSection/FAQSection'
