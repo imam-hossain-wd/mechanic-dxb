@@ -3,16 +3,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, Clock, MapPin, Phone, Sparkles, Star, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, Flame, MapPin, Phone, Sparkles, Star, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SiteConfig } from "@/config/siteConfig";
 
 
 
-export const ServiceCard = ({ service, featured = false, className }) => {
-    const primaryColor = "bg-primary";
-    const primaryText = "text-primary";
+export const ServiceCard = ({ service, featured, className }) => {
+
 
     // Benefits for display
     const benefits = [
@@ -24,26 +23,15 @@ export const ServiceCard = ({ service, featured = false, className }) => {
     return (
         <div
             className={cn(
-                "group relative overflow-hidden rounded-2xl bg-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl",
-                featured
-                    ? "border-2 border-primary/30 shadow-xl shadow-primary/20 hover:shadow-primary/30"
-                    : "border border-border/50 shadow-lg hover:shadow-primary/10",
-                className
+                "group relative overflow-hidden rounded-2xl bg-card transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border-2 border-primary/50 shadow-xl shadow-primary/20",
             )}
         >
             {/* Premium Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            {/* Glowing Border Effect */}
-            <div className={cn(
-                "absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-                featured && "opacity-100"
-            )} style={{ padding: '1px' }} />
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             {/* Top Glow Line */}
             <div className={cn(
-                "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-500",
-                featured ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-500 opacity-100",
             )} />
 
             {/* Badges Container */}
@@ -56,23 +44,27 @@ export const ServiceCard = ({ service, featured = false, className }) => {
                         </div>
                     )}
                     {service.premium && (
-                        <div className="flex items-center gap-1 bg-gradient-to-r from-amber-400 to-amber-500 px-2.5 py-1 text-[10px] font-bold text-white shadow-lg">
+                        <div className="flex items-center gap-1 bg-linear-to-r from-amber-400 to-amber-500 px-2.5 py-1 text-[10px] font-bold text-white shadow-lg">
                             <Sparkles className="h-2.5 w-2.5" />
                             Premium
                         </div>
                     )}
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                    {featured && (
+                    {/* {featured && (
                         <div className="flex items-center gap-1 bg-primary px-2.5 py-1 text-[10px] font-bold text-white shadow-lg shadow-primary/30">
                             <Star className="h-2.5 w-2.5 fill-current" />
-                            Featured
+                            Popular
                         </div>
-                    )}
-                    {service.popular && !featured && (
-                        <div className="flex items-center gap-1 bg-orange-500 px-2.5 py-1 text-[10px] font-bold text-white shadow-lg">
-                            🔥 Popular
+                    )} */}
+                    {service.popular && (
+                        <div className="flex items-center gap-1 bg-primary px-2.5 py-1 text-[10px] font-bold text-white shadow-lg shadow-primary/30">
+                            <Flame className="h-2.5 w-2.5 fill-current" />
+                            Popular
                         </div>
+                        // <div className="flex items-center gap-1 bg-orange-500 px-2.5 py-1 text-[10px] font-bold text-white shadow-lg">
+                        //     🔥 Popular
+                        // </div>
                     )}
                 </div>
             </div>
@@ -81,6 +73,7 @@ export const ServiceCard = ({ service, featured = false, className }) => {
                 {/* Service Icon with Glass Effect */}
                 <div className="relative mb-4">
                     <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    
                     <div className="relative inline-flex rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-3.5 shadow-lg shadow-primary/10 transition-all duration-500 group-hover:scale-110">
                         {service.service_image ? (
                             <Image
@@ -112,7 +105,7 @@ export const ServiceCard = ({ service, featured = false, className }) => {
                 </div>
 
                 {/* Quick Benefits */}
-                <div className="mb-4 flex flex-wrap gap-2">
+                {/* <div className="mb-4 flex flex-wrap gap-2">
                     {benefits.map((benefit, index) => (
                         <div
                             key={index}
@@ -122,7 +115,7 @@ export const ServiceCard = ({ service, featured = false, className }) => {
                             {benefit.label}
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2 pt-4">

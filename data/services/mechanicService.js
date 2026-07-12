@@ -5,7 +5,7 @@ export const mechanicService = {
   name: "Car Mechanic Service",
   metaTitle: "Mobile Car Mechanic Dubai – Onsite Car Repair & Service",
   metaDescription: "Need a reliable car mechanic in Dubai? Get expert mobile car repair, servicing, and maintenance at your location with Car Repair Mechanic Dubai. Fast 5 to 15 minutes response across Dubai.",
-
+  popular: true,
   features: [
     "Full car diagnostics & repair",
     "Engine repair & maintenance",

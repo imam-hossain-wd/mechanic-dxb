@@ -5,6 +5,7 @@ export const jumpStartService = {
     name: "Jump Start Car",
     metaTitle: "Car Jump Start Service Dubai – 24/7 Emergency Battery Boost Near Me",
     metaDescription: "Need a car jump start in Dubai? Get fast 24/7 emergency jump start service with Car Repair Mechanic Dubai. Safe battery boosting by expert mobile mechanics in 5 to 15 minutes anywhere in Dubai.",
+    popular: true,
     features: [
         "24/7 car jump start service in Dubai",
         "Safe battery boosting",

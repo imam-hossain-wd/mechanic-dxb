@@ -13,12 +13,12 @@ export default function ServicesSection() {
     const [visibleServices, setVisibleServices] = useState(services.slice(0, 8));
 
     // Features stats
-    const stats = [
-        { icon: Clock, label: "24/7 Available", value: "Round the clock" },
-        { icon: Wrench, label: "Expert Mechanics", value: "Certified pros" },
-        { icon: Shield, label: "Warranty", value: "On all repairs" },
-        { icon: Award, label: "Trusted Service", value: "2,000+ reviews" },
-    ];
+    // const stats = [
+    //     { icon: Clock, label: "24/7 Available", value: "Round the clock" },
+    //     { icon: Wrench, label: "Expert Mechanics", value: "Certified pros" },
+    //     { icon: Shield, label: "Warranty", value: "On all repairs" },
+    //     { icon: Award, label: "Trusted Service", value: "2,000+ reviews" },
+    // ];
 
     return (
         <section className="relative overflow-hidden bg-background py-10">
@@ -31,7 +31,7 @@ export default function ServicesSection() {
 
             <div className="container mx-auto px-4">
                 {/* Header Section */}
-                <div className="mb-12 text-center md:mb-16">
+                <div className="mb-12 text-center">
                     <div className="mb-4 flex items-center justify-center gap-2">
                         <div className="h-px w-12 bg-primary/30" />
                         <span className="text-sm font-medium uppercase tracking-wider text-primary">
@@ -55,7 +55,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Stats Bar */}
-                <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                {/* <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
                     {stats.map((stat, index) => (
                         <div
                             key={index}
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                             <p className="text-sm font-semibold text-foreground">{stat.value}</p>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

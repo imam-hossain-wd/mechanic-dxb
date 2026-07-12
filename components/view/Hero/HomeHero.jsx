@@ -18,16 +18,16 @@ export default function HomeHero() {
             {/* Ultra Modern Animated Background */}
             <div className="absolute inset-0 -z-10">
                 {/* Primary gradient orbs with animation */}
-                <div className="absolute top-0 -right-20 h-[800px] w-[800px] animate-pulse-slow rounded-full bg-primary/20 blur-3xl" />
-                <div className="absolute -bottom-40 -left-20 h-[600px] w-[600px] animate-pulse-slow rounded-full bg-primary/15 blur-3xl" style={{ animationDelay: '2s' }} />
-                <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-primary/5 blur-3xl" style={{ animationDelay: '4s' }} />
+                <div className="absolute top-0 -right-20 h-200 w-200 animate-pulse-slow rounded-full bg-primary/20 blur-3xl" />
+                <div className="absolute -bottom-40 -left-20 h-150 w-150 animate-pulse-slow rounded-full bg-primary/15 blur-3xl" style={{ animationDelay: '2s' }} />
+                <div className="absolute top-1/2 left-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 animate-pulse-slow rounded-full bg-primary/5 blur-3xl" style={{ animationDelay: '4s' }} />
 
                 {/* Dynamic grid pattern */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px]" />
 
                 {/* Animated gradient lines */}
-                <div className="absolute top-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-0 h-px w-full animate-gradient-x bg-linear-to-r from-transparent via-primary/30 to-transparent" />
+                <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-linear-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
 
                 {/* Floating particles effect */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -78,8 +78,8 @@ export default function HomeHero() {
 
                     {/* Description */}
                     <p className="animate-fade-in-up mb-6 max-w-2xl text-base text-muted-foreground sm:text-lg lg:text-xl" style={{ animationDelay: '0.2s' }}>
-                        Broke down? Get a professional mechanic at your doorstep in{" "}
-                        <span className="relative font-semibold text-primary">
+                        24/7 Mobile Car Repair in Dubai – Fast, Reliable & At Your Location within
+                        <span className="relative font-semibold text-primary ml-1">
                             5–15 minutes
                             <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-primary/30" />
                         </span>

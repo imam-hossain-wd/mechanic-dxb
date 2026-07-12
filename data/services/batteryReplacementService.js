@@ -5,6 +5,7 @@ export const batteryReplacementService = {
     name: "Car Battery Replacement",
     metaTitle: "Car Battery Replacement Dubai – 24/7 Mobile Battery Service Near Me",
     metaDescription: "Looking for car battery replacement in Dubai? Get fast 24/7 mobile battery service with on-site installation, battery testing, and warranty with Car Repair Mechanic Dubai. We reach you anywhere in Dubai in 5 to 15 minutes.",
+    popular: true,
 
     features: [
         "On-site car battery replacement Dubai",

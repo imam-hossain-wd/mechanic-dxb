@@ -5,7 +5,7 @@ export const alternatorRepair = {
     name: "Car Alternator Repair",
     metaTitle: "Car Alternator Repair Dubai – Battery Not Charging? Fix Near Me",
     metaDescription: "Facing battery drain or charging issues? Get expert car alternator repair in Dubai with Car Repair Mechanic Dubai fast mobile service. 24/7 onsite diagnostics and replacement available.",
-
+popular: true,
     features: [
         "Alternator diagnostics and repair",
         "Charging system inspection",

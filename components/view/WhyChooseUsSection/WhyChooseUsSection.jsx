@@ -188,16 +188,16 @@ export default function WhyChooseUsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:bg-primary/5 hover:shadow-2xl hover:shadow-primary/10"
+              className="group relative overflow-hidden rounded-2xl border  p-6 backdrop-blur-sm transition-all duration-500 border-primary/30 bg-primary/5 hover:shadow-2xl shadow-primary/10"
             >
               {/* Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-100" />
               
               {/* Top Glow Line */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-100 transition-opacity duration-500 " />
 
               {/* Icon with Glass Effect */}
-              <div className="relative mb-4">
+              {/* <div className="relative mb-4">
                 <div className="absolute inset-0 rounded-xl bg-primary/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className={cn(
                   "relative inline-flex rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 p-3 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-primary/20",
@@ -205,7 +205,7 @@ export default function WhyChooseUsSection() {
                 )}>
                   <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
-              </div>
+              </div> */}
 
               {/* Content */}
               <div className="relative">
@@ -223,7 +223,7 @@ export default function WhyChooseUsSection() {
               </div>
 
               {/* Animated Checkmark on Hover */}
-              <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-500 group-hover:opacity-100">
+              <div className="absolute bottom-4 right-4 opacity-100 transition-all duration-500">
                 <CheckCircle className="h-5 w-5 text-primary" />
               </div>
             </div>

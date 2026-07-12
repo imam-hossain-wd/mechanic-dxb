@@ -5,7 +5,7 @@ export const carRepairDubai = {
   name: "Car Repair Dubai",
   metaTitle: "Car Repair Dubai – Mobile Mechanic & Auto Repair Near You",
   metaDescription: "Looking for car repair in Dubai? Get fast mobile car repair with Car Repair Mechanic Dubai. Engine diagnostics, battery replacement, AC repair, and full auto service at your location. 24/7 expert mechanics.",
-
+popular: true,
   features: [
     "Complete car repair & diagnostics",
     "Mobile car mechanic service anywhere in Dubai",

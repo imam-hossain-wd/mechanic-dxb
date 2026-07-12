@@ -5,7 +5,7 @@ export const acRepair = {
     name: "Car AC Repair",
     metaTitle: "Car AC Repair Dubai – AC Not Cooling? Gas Refill & Fix Near Me",
     metaDescription: "Car AC not cooling in Dubai? Get expert AC repair, gas refill, and compressor service with Car Repair Mechanic Dubai fast mobile mechanics. 24/7 onsite AC repair anywhere in Dubai.",
-
+    popular: true,
     features: [
         "Car AC cooling system diagnostics",
         "AC gas refill (R134a & R1234yf)",
@@ -15,10 +15,11 @@ export const acRepair = {
         "Mobile car AC repair anywhere in Dubai"
     ],
 
+
     slug: "car-ac-repair-dubai",
 
     service_image: serviceImages?.airConditioner,
-    service_banner: ServiceBanner?.acRepair ,
+    service_banner: ServiceBanner?.acRepair,
 
     intro: {
         heading: "Professional Car AC Repair Service in Dubai",
