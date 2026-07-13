@@ -242,38 +242,6 @@ export function FAQSection() {
                     </p>
                 </div>
 
-                {/* Popular FAQs */}
-                <div className="mb-10">
-                    <div className="mb-4 flex items-center gap-2">
-                        <Flame className="h-5 w-5 text-orange-500" />
-                        <h3 className="font-semibold text-foreground">Most Popular Questions</h3>
-                    </div>
-                    <div className="grid gap-3 md:grid-cols-3">
-                        {popularFAQs.map((faq, index) => {
-                            const globalIndex = enhancedFaqData.findIndex(f => f.question === faq.question);
-                            const Icon = faq.icon || HelpCircle;
-                            return (
-                                <button
-                                    key={index}
-                                    onClick={() => {
-                                        setOpenIndex(openIndex === globalIndex ? null : globalIndex);
-                                        setActiveCategory("All");
-                                    }}
-                                    className="group flex items-center gap-3 rounded-2xl border border-border/50 bg-card/30 p-4 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg"
-                                >
-                                    <div className="rounded-full bg-primary/10 p-2 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                                        <Icon className="h-4 w-4 text-primary" />
-                                    </div>
-                                    <span className="flex-1 text-left text-sm font-medium text-foreground line-clamp-1">
-                                        {faq.question}
-                                    </span>
-                                    <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary" />
-                                </button>
-                            );
-                        })}
-                    </div>
-                </div>
-
                 {/* Search & Filters */}
                 <div className="mb-8 space-y-4">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -286,7 +254,7 @@ export function FAQSection() {
                                 placeholder="Search questions..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="pl-9 pr-9 rounded-full border-border/50 bg-card/30 backdrop-blur-sm focus:border-primary/50"
+                                className="pl-9 pr-9 rounded-full bg-card/30 backdrop-blur-sm border-2 border-primary"
                             />
                             {searchQuery && (
                                 <button
@@ -310,7 +278,7 @@ export function FAQSection() {
                                             "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300",
                                             activeCategory === category
                                                 ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                                                : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                                                : "bg-muted border-2 border-primary text-primary font-semibold hover:bg-primary/10 hover:text-foreground"
                                         )}
                                     >
                                         <Icon className="h-3 w-3" />
@@ -340,7 +308,7 @@ export function FAQSection() {
                             <div
                                 key={globalIndex}
                                 className={cn(
-                                    "group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500",
+                                    "group relative overflow-hidden rounded-2xl border border-primary/20 bg-card/50 backdrop-blur-sm transition-all duration-500 ",
                                     isOpen && "border-primary/30 bg-primary/5 shadow-xl shadow-primary/10"
                                 )}
                             >

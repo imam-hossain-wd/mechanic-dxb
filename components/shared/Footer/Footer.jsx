@@ -187,7 +187,6 @@ export function Footer() {
                                         href={`/services/${service.slug}`}
                                         className="group flex items-center gap-2 text-sm text-gray-300 hover:text-primary transition-all duration-200"
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary group-hover:scale-125 transition-all"></div>
                                         <span className="group-hover:translate-x-1 transition-transform">{service.name}</span>
                                     </Link>
                                 ))}
@@ -208,7 +207,7 @@ export function Footer() {
                                         key={index}
                                         className="group flex items-center gap-2 text-sm text-gray-300 "
                                     >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary group-hover:scale-125 transition-all"></div>
+                                        {/* <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary group-hover:scale-125 transition-all"></div> */}
                                         <span className="truncate group-hover:translate-x-1 transition-transform">{area?.name}</span>
                                     </p>
 

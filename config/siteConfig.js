@@ -5,35 +5,31 @@ import { Mail, MapPin, Phone } from "lucide-react";
 const { facebook, instagram, pinterest, youtube } = socialIcons;
 export const SiteConfig = {
   authorName: "Md Bappi",
-  brandName: "Car Repair Dubai",
+  brandName: "AL SATWA TRADING LLC",
   url: "https://www.carrepairmechanicdubai.com",
-  email: "carrepairmechanicdubai@gmail.com",
+  email: "alsatwatrading@gmail.com",
+  emailLink: "mailto:alsatwatrading@gmail.com",
   description: "24/7 Mobile Car Repair in Dubai – Fast, Reliable & At Your Location",
-  displayNumber: "+971 55 000 0000",
-  numberCallLink: "tel:+971551831901",
-  whatsappCallLink: "https://wa.me/971551831901",
-
-  // অ্যাড্রেস এবং লোকেশন ডাটা ফিক্সড ও সিঙ্কড
+  displayNumber: "+971 56 755 3726",
+  numberCallLink: "tel:+971567553726",
+  whatsappCallLink: "https://wa.me/971567553726",
   location: "Al Mankhool, Dubai, United Arab Emirates",
-  // location: "Umm Hurair Rd, Oud Metha, Dubai, United Arab Emirates",
-  streetAddress: "Umm Hurair Rd, Oud Metha",
+  streetAddress: "Kuwait St",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
   addressCountry: "AE",
   postalCode: "00000",
-  // latitude: "25.24398130",
-  // longitude: "55.31207400",
-  mapsLink: "https://maps.app.goo.gl/PTEtNCAPebdCyEfdA",
-  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.54940443774117!2d55.31179241370409!3d25.24398128981443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f433cf7f86155%3A0xf112cb3b80f3782d!2sCar%20Repair%20Mechanic%20Dubai!5e0!3m2!1sen!2sbd!4v1782232951928!5m2!1sen!2sbd",
+  mapsLink: "https://maps.app.goo.gl/E1HBW8UdW8TqFXpg9",
+  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.1477690094521!2d55.29219986951118!3d25.25069461156736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4390f518213d%3A0x9fee2925019875f!2sAL%20SATWA%20TRADING%20LLC!5e0!3m2!1sen!2sbd!4v1783959628506!5m2!1sen!2sbd",
 
   GMB: {
-    PlaceID: "ChIJVWH49zxDXz4RLXjzgDvLEvE",
-    CID: "17371170169148373037",
-    BusinessProfileID: "277089818678338044",
-    mapsLink: "https://maps.app.goo.gl/PTEtNCAPebdCyEfdA",
-    embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d225.54940443774117!2d55.31179241370409!3d25.24398128981443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f433cf7f86155%3A0xf112cb3b80f3782d!2sCar%20Repair%20Mechanic%20Dubai!5e0!3m2!1sen!2sbd!4v1782232951928!5m2!1sen!2sbd",
-    latitude: "25.24398130",
-    longitude: "55.31207400",
+    PlaceID: "ChIJPSEY9ZBDXz4RX4cZUJLi_gk",
+    CID: "720262108462810975",
+    BusinessProfileID: "11399040178541034570",
+    mapsLink: "https://maps.app.goo.gl/E1HBW8UdW8TqFXpg9",
+    embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.1477690094521!2d55.29219986951118!3d25.25069461156736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4390f518213d%3A0x9fee2925019875f!2sAL%20SATWA%20TRADING%20LLC!5e0!3m2!1sen!2sbd!4v1783959628506!5m2!1sen!2sbd",
+    latitude: "25.2506934",
+    longitude: "55.2928436",
   },
 
   serviceAreas: [
@@ -82,16 +78,16 @@ export const SiteConfig = {
   ],
 
   socialLinks: [
-    { name: "Facebook", icon: facebook, href: "https://www.facebook.com/carrepairmechanicdubai/" },
-    { name: "Instagram", icon: instagram, href: "https://www.instagram.com/carrepairmechanicdubai/" },
-    { name: "Pinterest", icon: pinterest, href: "https://www.pinterest.com/carrepairmechanicdubai/" },
-    { name: "YouTube", icon: youtube, href: "https://www.youtube.com/@carrepairmechanicdubai" }
+    { name: "Facebook", icon: facebook, href: "https://www.facebook.com" },
+    { name: "Instagram", icon: instagram, href: "https://www.instagram.com" },
+    { name: "Pinterest", icon: pinterest, href: "https://www.pinterest.com" },
+    { name: "YouTube", icon: youtube, href: "https://www.youtube.com" }
   ],
 
   contactLinks: [
     { name: "Map", icon: MapPin, href: "" },
-    { name: "Phone", icon: Phone, href: "tel:+971551831901" },
-    { name: "Email", icon: Mail, href: "mailto:carrepairmechanicdubai@gmail.com" }
+    { name: "Phone", icon: Phone, href: this?.numberCallLink },
+    { name: "Email", icon: Mail, href: this?.emailLink }
   ]
 };
 

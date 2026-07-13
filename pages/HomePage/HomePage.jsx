@@ -15,7 +15,7 @@ export default function HomePage() {
             <ServicesSection />
             <AboutSection />
             <WhyChooseUsSection />
-            <Maps />
+            <Maps /> 
             <ClientReviewsSection />
             <FAQSection />
             <StillHasAnyQuestions />
