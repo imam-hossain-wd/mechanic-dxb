@@ -1,9 +1,9 @@
 import { ChevronDown, X } from "lucide-react";
 import Link from "next/link";
-// import Logo from "../Logo/Logo";
 import { Drawer } from "../Drawer/Drawer";
 import { useState } from "react";
 import { mobileNavItems } from "./NavMenus";
+import Logo from "../Logo/Logo";
 
 export const MobileDrawerNav = ({ isOpen, onClose, pathname }) => {
   const [expandedMenu, setExpandedMenu] = useState(null);
@@ -20,8 +20,8 @@ export const MobileDrawerNav = ({ isOpen, onClose, pathname }) => {
         {/* Header with Logo (Left) and Close Button (Right) */}
         <div className="flex items-center justify-between my-3 px-5 py-2">
           {/* Logo on Left */}
-          {/* <Logo /> */}Car Mechanic
-          {/* Close Button on Right */}
+          <Logo />
+
           <button
             onClick={onClose}
             className="p-2 rounded-lg bg-primary/10"
@@ -62,9 +62,9 @@ export const MobileDrawerNav = ({ isOpen, onClose, pathname }) => {
                           onClick={onClose}
                           className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary rounded-lg transition-all"
                         >
-                            <div className="flex items-center justify-between">
-                              <span>{sub.name}</span>
-                            </div>
+                          <div className="flex items-center justify-between">
+                            <span>{sub.name}</span>
+                          </div>
                         </Link>
                       ))}
                     </div>

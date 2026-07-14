@@ -1,19 +1,14 @@
-// app/services/page.tsx
+// app/services/page.jsx
 "use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
     Search,
     Filter,
-    Grid3x3,
-    List,
     X,
     ArrowRight,
-    CheckCircle,
     Clock,
-    MapPin,
     Phone,
     Star,
     Sparkles,
@@ -24,30 +19,20 @@ import {
     Award,
     Users,
     Truck,
-    Calendar,
     BadgeCheck,
     Heart,
-    Eye,
     ChevronDown,
-    ChevronUp,
     TrendingUp,
-    ThumbsUp,
     MessageCircle,
-    Share2,
-    ExternalLink,
-    Layers,
-    LayoutGrid,
-    ListChecks,
-    Grid2X2,
     Grid3X3 as GridIcon
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ServiceBanner, serviceImages } from "@/utils/assets";
 import { SiteConfig } from "@/config/siteConfig";
 import { services } from "@/data/services/services";
+import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
 
 // Service categories
 const categories = [
@@ -131,16 +116,6 @@ export default function ServicesPage() {
 
     // Paginate services
     const paginatedServices = sortedServices.slice(0, visibleServices);
-    const hasMore = visibleServices < sortedServices.length;
-
-    // Load more
-    const loadMore = () => {
-        setVisibleServices(prev => prev + 6);
-    };
-
-    // Stats
-    const totalServices = enhancedServices.length;
-    const categoriesCount = categories.length - 1;
 
     // Animation on scroll
     useEffect(() => {
@@ -150,7 +125,9 @@ export default function ServicesPage() {
     return (
         <main className="relative overflow-hidden bg-background">
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 pb-16 md:pt-28 md:pb-20">
+            <section className="relative overflow-hidden bg-primary/10 pt-16">
+            {/* <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 pb-16 md:pt-28 md:pb-20"> */}
+
                 <div className="absolute inset-0 -z-10">
                     <div className="absolute -right-20 top-0 h-[500px] w-[500px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
                     <div className="absolute -bottom-40 -left-20 h-[400px] w-[400px] animate-float-slow rounded-full bg-primary/10 blur-3xl" style={{ animationDelay: '2s' }} />
@@ -182,7 +159,7 @@ export default function ServicesPage() {
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <Button
+                            {/* <Button
                                 className="gap-2 rounded-full bg-primary shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                                 asChild
                             >
@@ -190,8 +167,8 @@ export default function ServicesPage() {
                                     <span>Browse Services</span>
                                     <ArrowRight className="h-4 w-4" />
                                 </Link>
-                            </Button>
-                            <Button
+                            </Button> */}
+                            {/* <Button
                                 variant="outline"
                                 className="gap-2 rounded-full border-2 border-primary/20 text-primary hover:bg-primary/5"
                                 asChild
@@ -200,58 +177,18 @@ export default function ServicesPage() {
                                     <Phone className="h-4 w-4" />
                                     Call Now
                                 </Link>
-                            </Button>
+                            </Button> */}
                         </div>
                     </div>
                 </div>
             </section>
 
+
+
+
             {/* Services Section */}
             <section id="services" className="py-12 md:py-16" ref={containerRef}>
                 <div className="container mx-auto px-4">
-                    {/* Stats Bar */}
-                    <div className="mb-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-                        <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-                            <div className="mb-2 flex justify-center">
-                                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                                    <Wrench className="h-5 w-5 text-primary" />
-                                </div>
-                            </div>
-                            <p className="text-2xl font-bold text-foreground">{totalServices}+</p>
-                            <p className="text-xs font-medium text-muted-foreground">Services Available</p>
-                        </div>
-
-                        <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-                            <div className="mb-2 flex justify-center">
-                                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                                    <Users className="h-5 w-5 text-primary" />
-                                </div>
-                            </div>
-                            <p className="text-2xl font-bold text-foreground">2,000+</p>
-                            <p className="text-xs font-medium text-muted-foreground">Happy Customers</p>
-                        </div>
-
-                        <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-                            <div className="mb-2 flex justify-center">
-                                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                                    <Star className="h-5 w-5 fill-primary text-primary" />
-                                </div>
-                            </div>
-                            <p className="text-2xl font-bold text-foreground">4.9/5</p>
-                            <p className="text-xs font-medium text-muted-foreground">Average Rating</p>
-                        </div>
-
-                        <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-                            <div className="mb-2 flex justify-center">
-                                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                                    <Clock className="h-5 w-5 text-primary" />
-                                </div>
-                            </div>
-                            <p className="text-2xl font-bold text-foreground">12 min</p>
-                            <p className="text-xs font-medium text-muted-foreground">Avg. Response</p>
-                        </div>
-                    </div>
-
                     {/* Filters & Controls */}
                     <div className="mb-8 space-y-4">
                         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -288,32 +225,6 @@ export default function ServicesPage() {
                                     <option value="price-low">Price: Low to High</option>
                                     <option value="price-high">Price: High to Low</option>
                                 </select>
-
-                                {/* View Toggle */}
-                                <div className="flex rounded-full border border-border/50 bg-card/30 p-0.5 backdrop-blur-sm">
-                                    <button
-                                        onClick={() => setViewMode("grid")}
-                                        className={cn(
-                                            "rounded-full p-1.5 transition-all duration-300",
-                                            viewMode === "grid"
-                                                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                                                : "text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        <GridIcon className="h-4 w-4" />
-                                    </button>
-                                    <button
-                                        onClick={() => setViewMode("list")}
-                                        className={cn(
-                                            "rounded-full p-1.5 transition-all duration-300",
-                                            viewMode === "list"
-                                                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                                                : "text-muted-foreground hover:text-foreground"
-                                        )}
-                                    >
-                                        <List className="h-4 w-4" />
-                                    </button>
-                                </div>
 
                                 {/* Filter Toggle (Mobile) */}
                                 <button
@@ -352,135 +263,52 @@ export default function ServicesPage() {
                         </p>
                     </div>
 
-                    {/* Services Grid */}
+                    {/* Services Grid - Using ServiceCard Component */}
                     <div className={cn(
                         viewMode === "grid"
-                            ? "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                            ? "grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
                             : "space-y-4",
                         "transition-all duration-500",
                         animateItems && "opacity-100 translate-y-0"
                     )}>
                         {paginatedServices.map((service, index) => {
-                            const Icon = service.icon || Wrench;
-
                             if (viewMode === "grid") {
                                 return (
                                     <div
                                         key={index}
-                                        className={cn(
-                                            "group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10",
-                                            service.isFeatured && "border-primary/30 bg-primary/5",
-                                            "animate-fade-in-up"
-                                        )}
+                                        className="animate-fade-in-up"
                                         style={{ animationDelay: `${index * 0.05}s` }}
                                     >
-                                        {/* Badges */}
-                                        <div className="absolute right-3 top-3 flex flex-col gap-1">
-                                            {service.isFeatured && (
-                                                <Badge className="bg-primary/20 text-primary border-primary/30">
-                                                    <Sparkles className="mr-1 h-3 w-3" />
-                                                    Featured
-                                                </Badge>
-                                            )}
-                                            {service.isNew && (
-                                                <Badge className="bg-emerald-500/20 text-emerald-500 border-emerald-500/30">
-                                                    New
-                                                </Badge>
-                                            )}
-                                            {service.isPopular && (
-                                                <Badge className="bg-amber-500/20 text-amber-500 border-amber-500/30">
-                                                    <TrendingUp className="mr-1 h-3 w-3" />
-                                                    Popular
-                                                </Badge>
-                                            )}
-                                        </div>
-
-                                        {/* Icon */}
-                                        <div className="mb-4">
-                                            <div className="inline-flex rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-3 shadow-lg shadow-primary/10 transition-all duration-500 group-hover:scale-110">
-                                                <Icon className="h-8 w-8 text-primary" />
-                                            </div>
-                                        </div>
-
-                                        {/* Content */}
-                                        <h3 className="mb-1 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                                            {service.name}
-                                        </h3>
-
-                                        <p className="mb-3 text-xs text-muted-foreground line-clamp-2">
-                                            {service.title}
-                                        </p>
-
-                                        {/* Features */}
-                                        <div className="mb-3 space-y-1">
-                                            {service.features?.slice(0, 2).map((feature, idx) => (
-                                                <div key={idx} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                                                    <CheckCircle className="h-3 w-3 text-primary" />
-                                                    <span className="line-clamp-1">{feature}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-
-                                        {/* Meta Info */}
-                                        <div className="mb-3 flex items-center gap-3 text-[10px] text-muted-foreground">
-                                            <span className="flex items-center gap-0.5">
-                                                <Clock className="h-3 w-3" />
-                                                {service.duration}
-                                            </span>
-                                            <span className="flex items-center gap-0.5">
-                                                <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
-                                                {service.rating}
-                                            </span>
-                                            <span className="flex items-center gap-0.5">
-                                                <Users className="h-3 w-3" />
-                                                {service.reviews}
-                                            </span>
-                                        </div>
-
-                                        {/* Price & Actions */}
-                                        <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                                            <div>
-                                                <p className="text-xs text-muted-foreground">Starting from</p>
-                                                <p className="text-lg font-bold text-primary">{service.price}</p>
-                                            </div>
-                                            <div className="flex gap-2">
-                                                <Button
-                                                    size="sm"
-                                                    className="gap-1 rounded-full bg-primary px-4 text-xs shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02]"
-                                                    asChild
-                                                >
-                                                    <Link href={`/services/${service.slug}`}>
-                                                        <Eye className="h-3 w-3" />
-                                                        View
-                                                    </Link>
-                                                </Button>
-                                                <Button
-                                                    size="sm"
-                                                    variant="outline"
-                                                    className="gap-1 rounded-full border-2 border-primary/20 px-3 text-xs text-primary hover:bg-primary/5"
-                                                    asChild
-                                                >
-                                                    <a href={`tel:${SiteConfig.displayNumber}`}>
-                                                        <Phone className="h-3 w-3" />
-                                                    </a>
-                                                </Button>
-                                            </div>
-                                        </div>
+                                        <ServiceCard
+                                            service={service}
+                                            featured={service.isFeatured}
+                                        />
                                     </div>
                                 );
                             }
 
-                            // List View
+                            // List View - Custom rendering for list mode
                             return (
                                 <div
                                     key={index}
-                                    className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10"
+                                    className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-5 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade-in-up"
+                                    style={{ animationDelay: `${index * 0.05}s` }}
                                 >
                                     <div className="flex flex-col gap-4 md:flex-row md:items-center">
                                         {/* Icon */}
                                         <div className="flex-shrink-0">
                                             <div className="inline-flex rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-3 transition-all duration-500 group-hover:scale-110">
-                                                <Icon className="h-8 w-8 text-primary" />
+                                                {service.service_image ? (
+                                                    <Image
+                                                        src={service.service_image}
+                                                        alt={service.name}
+                                                        width={32}
+                                                        height={32}
+                                                        className="h-8 w-8 object-contain"
+                                                    />
+                                                ) : (
+                                                    <Wrench className="h-8 w-8 text-primary" />
+                                                )}
                                             </div>
                                         </div>
 
@@ -492,12 +320,19 @@ export default function ServicesPage() {
                                                 </h3>
                                                 {service.isFeatured && (
                                                     <Badge className="bg-primary/20 text-primary border-primary/30 text-[10px]">
+                                                        <Sparkles className="mr-1 h-3 w-3" />
                                                         Featured
                                                     </Badge>
                                                 )}
                                                 {service.isNew && (
                                                     <Badge className="bg-emerald-500/20 text-emerald-500 border-emerald-500/30 text-[10px]">
                                                         New
+                                                    </Badge>
+                                                )}
+                                                {service.isPopular && (
+                                                    <Badge className="bg-amber-500/20 text-amber-500 border-amber-500/30 text-[10px]">
+                                                        <TrendingUp className="mr-1 h-3 w-3" />
+                                                        Popular
                                                     </Badge>
                                                 )}
                                             </div>
@@ -533,7 +368,6 @@ export default function ServicesPage() {
                                                     asChild
                                                 >
                                                     <Link href={`/services/${service.slug}`}>
-                                                        <Eye className="h-3 w-3" />
                                                         View
                                                     </Link>
                                                 </Button>
@@ -555,19 +389,6 @@ export default function ServicesPage() {
                         })}
                     </div>
 
-                    {/* Load More */}
-                    {hasMore && (
-                        <div className="mt-10 text-center">
-                            <Button
-                                onClick={loadMore}
-                                variant="outline"
-                                className="gap-2 rounded-full border-2 border-primary/20 px-8 py-6 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary/5 hover:scale-[1.02]"
-                            >
-                                <span>Load More Services</span>
-                                <ChevronDown className="h-4 w-4" />
-                            </Button>
-                        </div>
-                    )}
 
                     {/* No Results */}
                     {sortedServices.length === 0 && (

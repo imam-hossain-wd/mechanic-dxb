@@ -274,7 +274,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { SiteConfig } from "@/config/siteConfig";
-import { ServiceBanner } from "@/utils/assets";
+import { heroImages, ServiceBanner } from "@/utils/assets";
 
 export default function HomeHero() {
     return (
@@ -358,11 +358,11 @@ export default function HomeHero() {
             {/* ============================================
           MAIN CONTENT
           ============================================ */}
-            <div className="container relative mx-auto flex min-h-[calc(100vh-5rem)] flex-col-reverse items-center justify-center px-4 py-12 lg:flex-row lg:gap-16 lg:py-0">
+            <div className="container relative mx-auto flex min-h-[calc(100vh-5rem)] flex-col-reverse items-center justify-center px-4 py-5 lg:flex-row lg:gap-16 lg:py-0">
                 {/* LEFT: Text Content */}
                 <div className="relative z-10 flex w-full max-w-2xl flex-col items-start text-left lg:pr-8">
                     {/* Status pill */}
-                    <div className="mb-3 mt-5 flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-3 py-1.5 backdrop-blur-xl">
+                    <div className="mb-3 mt-5 hidden  md:flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-3 py-1.5 backdrop-blur-xl">
                         <span className="relative flex h-2 w-2">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -377,7 +377,7 @@ export default function HomeHero() {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="mb-6 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+                    <h1 className="mb-6 mt-4 md:mt-0 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
                         Dubai's Fastest
                         <br />
                         <span className="relative inline-block">
@@ -414,10 +414,10 @@ export default function HomeHero() {
                     </h1>
 
                     {/* Subheadline */}
-                    <p className="mb-8 max-w-xl text-lg leading-relaxed text-white/60 sm:text-xl">
+                    <p className="mb-8 max-w-xl text-lg leading-relaxed text-white sm:text-xl">
                         24/7 emergency car repair at your doorstep. Our certified
                         technicians arrive in{" "}
-                        <span className="font-semibold text-white">5–15 minutes</span>{" "}
+                        <span className="font-semibold">5–15 minutes</span>{" "}
                         anywhere in Dubai — battery, AC, engine & more.
                     </p>
 
@@ -428,7 +428,7 @@ export default function HomeHero() {
                             asChild
                             className="group relative h-14 overflow-hidden rounded-full border border-primary/30 bg-primary px-8 text-base font-bold text-white shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_-5px_rgba(251,191,36,0.7)]"
                         >
-                            <Link href="tel:+971551831901">
+                            <Link href={SiteConfig?.numberCallLink} className="flex items-center gap-2">
                                 <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                                 <Phone className="mr-2 h-5 w-5" />
                                 Call Now — Free Quote
@@ -498,13 +498,13 @@ export default function HomeHero() {
                     </div>
 
                     {/* Main image card */}
-                    <div className="relative aspect-[4/5] w-[90%] h-110 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-1 shadow-2xl backdrop-blur-xl">
+                    <div className="relative aspect-[4/5] w-[90%] md:w-[90%] h-70 md:h-90 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-1 shadow-2xl backdrop-blur-xl">
                         {/* Glow behind image */}
                         <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-amber-500/20 via-transparent to-blue-500/10 blur-2xl" />
 
                         <div className="relative h-full w-full overflow-hidden rounded-[1.75rem]">
                             <Image
-                                src={ServiceBanner?.mechanic}
+                                src={heroImages?.homeHero}
                                 alt="Professional Car Mechanic Dubai"
                                 fill
                                 className="h-full w-full"
@@ -514,16 +514,6 @@ export default function HomeHero() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/40 to-transparent" />
                             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-blue-500/5 mix-blend-overlay" />
 
-                            {/* Top-right status badge */}
-                            <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-3 py-1.5 backdrop-blur-xl">
-                                <span className="relative flex h-1.5 w-1.5">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                                </span>
-                                <span className="text-[10px] font-semibold uppercase tracking-wider text-white">
-                                    Online
-                                </span>
-                            </div>
 
                             {/* Bottom-left floating card */}
                             <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white bg-primary/10 p-4 backdrop-blur-xl">
@@ -557,7 +547,7 @@ export default function HomeHero() {
 
                     {/* Floating side card — left */}
                     <div
-                        className="absolute -left-4 top-1/4 hidden rounded-2xl border border-white/10 bg-primary/20 p-3 backdrop-blur-xl shadow-2xl sm:block"
+                        className="absolute left-2 md:-left-4 top-1/4 rounded-2xl border border-white/10 bg-primary/20 p-3 backdrop-blur-xl shadow-2xl sm:block"
                         style={{ animation: "floatY 6s ease-in-out infinite" }}
                     >
                         <div className="flex items-center gap-2.5">
@@ -577,7 +567,7 @@ export default function HomeHero() {
 
                     {/* Floating side card — right */}
                     <div
-                        className="absolute -right-2 bottom-1/4 hidden rounded-2xl border border-white/10 bg-primary/10 p-3 backdrop-blur-xl shadow-2xl sm:block"
+                        className="absolute  right-4 md:-right-2 bottom-1/4 rounded-2xl border border-white/10 bg-primary/10 p-3 backdrop-blur-xl shadow-2xl sm:block"
                         style={{
                             animation: "floatY 6s ease-in-out infinite",
                             animationDelay: "2s",

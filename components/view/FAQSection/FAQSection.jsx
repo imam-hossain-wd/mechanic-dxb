@@ -221,19 +221,19 @@ export function FAQSection() {
                 {/* Section Header */}
                 <div className="mb-12 text-center">
                     <div className="mb-4 flex items-center justify-center gap-3">
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
+                        <div className="h-px w-12 bg-linear-to-r from-transparent to-primary/50" />
                         <Badge variant="outline" className="border-primary/30 px-4 py-1.5 text-sm font-medium text-primary">
                             <HelpCircle className="mr-2 h-3.5 w-3.5" />
                             FAQ
                         </Badge>
-                        <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
+                        <div className="h-px w-12 bg-linear-to-l from-transparent to-primary/50" />
                     </div>
 
                     <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
                         Frequently Asked
-                        <span className="relative mx-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                        <span className="relative mx-3 bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                             Questions
-                            <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-primary to-primary/30 animate-pulse-slow" />
+                            <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-linear-to-r from-primary to-primary/30 animate-pulse-slow" />
                         </span>
                     </h2>
 

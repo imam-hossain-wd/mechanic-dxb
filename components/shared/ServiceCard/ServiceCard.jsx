@@ -8,18 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SiteConfig } from "@/config/siteConfig";
 
-
-
 export const ServiceCard = ({ service, featured, className }) => {
-
-
-    // Benefits for display
-    const benefits = [
-        { icon: Clock, label: "Fast Service" },
-        { icon: MapPin, label: "Onsite Repair" },
-        { icon: Sparkles, label: "Expert Team" },
-    ];
-
     return (
         <div
             className={cn(
@@ -31,7 +20,7 @@ export const ServiceCard = ({ service, featured, className }) => {
 
             {/* Top Glow Line */}
             <div className={cn(
-                "absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-500 opacity-100",
+                "absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-primary to-transparent transition-all duration-500 opacity-100",
             )} />
 
             {/* Badges Container */}
@@ -74,7 +63,7 @@ export const ServiceCard = ({ service, featured, className }) => {
                 <div className="relative mb-4">
                     <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     
-                    <div className="relative inline-flex rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-3.5 shadow-lg shadow-primary/10 transition-all duration-500 group-hover:scale-110">
+                    <div className="relative inline-flex rounded-2xl bg-primary/10 p-3.5 shadow-lg shadow-primary/10">
                         {service.service_image ? (
                             <Image
                                 src={service.service_image}
@@ -90,7 +79,7 @@ export const ServiceCard = ({ service, featured, className }) => {
                 </div>
 
                 {/* Service Name */}
-                <h3 className="mb-2 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-primary">
+                <h3 className="mb-2 text-xl font-bold transition-colors duration-300 text-primary">
                     {service.name}
                 </h3>
 

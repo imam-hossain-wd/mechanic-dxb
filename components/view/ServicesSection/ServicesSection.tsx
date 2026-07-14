@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Wrench, Clock, Shield, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { services } from "@/data/services/services";
@@ -11,14 +11,6 @@ import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
 
 export default function ServicesSection() {
     const [visibleServices, setVisibleServices] = useState(services.slice(0, 8));
-
-    // Features stats
-    // const stats = [
-    //     { icon: Clock, label: "24/7 Available", value: "Round the clock" },
-    //     { icon: Wrench, label: "Expert Mechanics", value: "Certified pros" },
-    //     { icon: Shield, label: "Warranty", value: "On all repairs" },
-    //     { icon: Award, label: "Trusted Service", value: "2,000+ reviews" },
-    // ];
 
     return (
         <section className="relative overflow-hidden bg-background py-10">
@@ -73,7 +65,7 @@ export default function ServicesSection() {
                 </div> */}
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 w-[90%] md:w-full mx-auto">
                     {visibleServices.map((service, index) => (
                         <div
                             key={service.slug}

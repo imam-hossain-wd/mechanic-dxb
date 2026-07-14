@@ -53,12 +53,18 @@ import instagram from "../assets/social-icon/instagram.png"
 import pinterest from "../assets/social-icon/pinterest.png"
 import youtube from "../assets/social-icon/youtube.png"
 
+import homeHero from "../assets/hero/home-hero.jpg"
+
 
 export const socialIcons = {
 facebook,
 instagram,
 pinterest, 
 youtube
+}
+
+export const heroImages = {
+    homeHero
 }
 
 export const ServiceBanner ={

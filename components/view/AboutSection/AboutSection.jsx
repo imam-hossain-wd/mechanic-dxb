@@ -222,16 +222,16 @@ export default function AboutSection() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5"
+                  className="group rounded-2xl border border-primary/30 bg-primary/10 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5"
                 >
                   <div className="mb-2 flex justify-center">
                     <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
                       <stat.icon className="h-5 w-5 text-primary" />
                     </div>
                   </div>
-                  <p className="text-xl font-bold text-foreground md:text-2xl">{stat.value}</p>
-                  <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
-                  <p className="text-[10px] text-muted-foreground/70">{stat.description}</p>
+                  <p className="text-xl font-bold text-black md:text-2xl">{stat.value}</p>
+                  <p className="text-xs font-medium text-gray-600">{stat.label}</p>
+                  <p className="text-[10px] text-gray-600 mt-1">{stat.description}</p>
                 </div>
               ))}
             </div>
@@ -268,7 +268,7 @@ export default function AboutSection() {
                 {values.map((value, index) => (
                   <div
                     key={index}
-                    className="group rounded-xl border border-border/50 bg-card/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg"
+                    className="group rounded-xl border border-primary bg-card/30 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg"
                   >
                     <div className="mb-2 flex items-start gap-2">
                       <div className="rounded-full bg-primary/10 p-1.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
@@ -290,10 +290,10 @@ export default function AboutSection() {
                 <div className="flex flex-wrap items-center gap-4">
                   {milestones.map((milestone, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                         {milestone.year}
                       </div>
-                      <span className="text-xs font-medium text-muted-foreground">
+                      <span className="text-xs font-medium text-black">
                         {milestone.label}
                       </span>
                       {index < milestones.length - 1 && (

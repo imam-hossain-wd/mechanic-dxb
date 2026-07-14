@@ -28,6 +28,7 @@ import { SiteConfig } from "@/config/siteConfig";
 // import Logo from "../Logo/Logo";
 import { services } from "@/data/services/services";
 import Image from "next/image";
+import Logo from "../Logo/Logo";
 
 
 export function Footer() {
@@ -73,14 +74,10 @@ export function Footer() {
                     <div className="lg:col-span-3 space-y-6">
                         {/* Brand Logo & Name */}
                         <Link href={SiteConfig?.GMB?.mapsLink} target="_blank" >
-                            {/* <div className="w-[55%] md:w-full space-y-4 bg-white p-4  rounded">
-
+                            <div className="w-[55%] md:w-full space-y-4 bg-white p-4  rounded">
                                 <Logo />
-                               
-
-
-                            </div> */}
-                             Car Mechanic
+                            </div>
+                          
                         </Link>
 
                         <div className="">
