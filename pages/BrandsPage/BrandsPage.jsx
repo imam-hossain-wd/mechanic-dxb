@@ -266,36 +266,9 @@ const carBrands = [
   }
 ];
 
-// Categories
-const categories = [
-  "All Brands",
-  "German",
-  "Japanese",
-  "American",
-  "Korean",
-  "British",
-  "Italian"
-];
-
-// Get country from brand
-const getBrandCategory = (brand) => {
-  const countryMap = {
-    "Japan": "Japanese",
-    "Germany": "German",
-    "USA": "American",
-    "South Korea": "Korean",
-    "UK": "British",
-    "Italy": "Italian"
-  };
-  return countryMap[brand.country] || "Other";
-};
 
 export default function BrandsPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("All Brands");
   const [viewMode, setViewMode] = useState("grid");
-  const [visibleBrands, setVisibleBrands] = useState(12);
-  const [selectedBrand, setSelectedBrand] = useState(null);
   const [animateItems, setAnimateItems] = useState(false);
 
   useEffect(() => {
@@ -303,35 +276,16 @@ export default function BrandsPage() {
   }, []);
 
   // Filter brands
-  const filteredBrands = carBrands.filter(brand => {
-    const category = getBrandCategory(brand);
-    const matchesCategory = activeCategory === "All Brands" || category === activeCategory;
-    const matchesSearch = searchQuery === "" || 
-      brand.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      brand.country.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      brand.popularModels.some(model => model.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
-  });
+  const filteredBrands = carBrands
 
-  // Paginate brands
-  const paginatedBrands = filteredBrands.slice(0, visibleBrands);
-  const hasMore = visibleBrands < filteredBrands.length;
-
-  // Featured brands
-  const featuredBrands = carBrands.filter(brand => brand.isFeatured).slice(0, 4);
-
-  // Stats
+  const paginatedBrands = filteredBrands;
   const totalBrands = carBrands.length;
   const totalCountries = new Set(carBrands.map(b => b.country)).size;
-
-  const loadMore = () => {
-    setVisibleBrands(prev => prev + 8);
-  };
 
   return (
     <main className="relative overflow-hidden bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 pb-16 md:pt-28 md:pb-20">
+      <section className="relative overflow-hidden bg-primary/10 pt-20 pb-16">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -right-20 top-0 h-[600px] w-[600px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] animate-float-slow rounded-full bg-primary/10 blur-3xl" style={{ animationDelay: '2s' }} />
@@ -389,11 +343,6 @@ export default function BrandsPage() {
                   className="gap-2 rounded-full bg-primary shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                   asChild
                 >
-                  <Link href="#brands">
-                    <Car className="h-4 w-4" />
-                    Explore Brands
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
                 </Button>
                 <Button
                   variant="outline"
@@ -408,7 +357,7 @@ export default function BrandsPage() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="mt-8 flex flex-wrap items-center gap-6">
+              {/* <div className="mt-8 flex flex-wrap items-center gap-6">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="h-10 w-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 ring-2 ring-background" />
@@ -423,7 +372,7 @@ export default function BrandsPage() {
                     <span className="text-xs font-medium text-muted-foreground ml-1">4.9/5</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Content - Brand Showcase */}
@@ -435,7 +384,7 @@ export default function BrandsPage() {
                     <div
                       key={brand.id}
                       className={cn(
-                        "group relative overflow-hidden rounded-2xl border border-border/50 bg-card/50 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10",
+                        "group relative overflow-hidden rounded-2xl border border-primary/10 bg-primary/10 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10",
                         "animate-fade-in-up"
                       )}
                       style={{ animationDelay: `${index * 0.05}s` }}
@@ -450,75 +399,15 @@ export default function BrandsPage() {
                     </div>
                   ))}
                 </div>
-
-                {/* Stats Overlay */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-xl bg-card/90 px-4 py-2 shadow-xl backdrop-blur-sm border border-border/50">
-                  <div className="flex items-center gap-4 text-xs">
-                    <span className="flex items-center gap-1.5">
-                      <Car className="h-3.5 w-3.5 text-primary" />
-                      {totalBrands}+ Brands
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <GlobeIcon className="h-3.5 w-3.5 text-primary" />
-                      {totalCountries} Countries
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-8 md:py-12 border-y border-border/50 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-              <div className="mb-2 flex justify-center">
-                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                  <Car className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold text-foreground">{totalBrands}+</p>
-              <p className="text-xs font-medium text-muted-foreground">Brands Serviced</p>
-            </div>
-            
-            <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-              <div className="mb-2 flex justify-center">
-                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                  <GlobeIcon className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold text-foreground">{totalCountries}</p>
-              <p className="text-xs font-medium text-muted-foreground">Countries</p>
-            </div>
-            
-            <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-              <div className="mb-2 flex justify-center">
-                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                  <Star className="h-5 w-5 fill-primary text-primary" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold text-foreground">4.9/5</p>
-              <p className="text-xs font-medium text-muted-foreground">Average Rating</p>
-            </div>
-            
-            <div className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5">
-              <div className="mb-2 flex justify-center">
-                <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                  <Users className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-              <p className="text-2xl font-bold text-foreground">2,000+</p>
-              <p className="text-xs font-medium text-muted-foreground">Happy Customers</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Brands Section */}
-      <section id="brands" className="py-16 md:py-24">
+      <section id="brands" className="py-10">
         <div className="container mx-auto px-4">
           {/* Featured Brands */}
           <div className="mb-12">
@@ -527,7 +416,7 @@ export default function BrandsPage() {
               <h3 className="font-semibold text-foreground">Featured Brands</h3>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {featuredBrands.map((brand) => (
+              {carBrands.map((brand) => (
                 <div
                   key={brand.id}
                   className="group relative overflow-hidden rounded-2xl border border-primary/30 bg-primary/5 p-6 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
@@ -560,81 +449,8 @@ export default function BrandsPage() {
             </div>
           </div>
 
-          {/* Filters & Controls */}
-          <div className="mb-8 space-y-4">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search brands..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 pr-9 rounded-full border-border/50 bg-card/30 backdrop-blur-sm focus:border-primary/50"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                )}
-              </div>
+        
 
-              <div className="flex items-center gap-2">
-                {/* View Toggle */}
-                <div className="flex rounded-full border border-border/50 bg-card/30 p-0.5 backdrop-blur-sm">
-                  <button
-                    onClick={() => setViewMode("grid")}
-                    className={cn(
-                      "rounded-full p-1.5 transition-all duration-300",
-                      viewMode === "grid"
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    <GridIcon className="h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode("list")}
-                    className={cn(
-                      "rounded-full p-1.5 transition-all duration-300",
-                      viewMode === "list"
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    <ListIcon className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Category Filters */}
-            <div className="flex flex-wrap gap-1.5">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={cn(
-                    "rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300",
-                    activeCategory === category
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
-                  )}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            {/* Results count */}
-            <p className="text-xs text-muted-foreground">
-              Showing {paginatedBrands.length} of {filteredBrands.length} brands
-            </p>
-          </div>
 
           {/* Brands Grid */}
           <div className={cn(
@@ -785,43 +601,6 @@ export default function BrandsPage() {
               );
             })}
           </div>
-
-          {/* Load More */}
-          {hasMore && (
-            <div className="mt-10 text-center">
-              <Button
-                onClick={loadMore}
-                variant="outline"
-                className="gap-2 rounded-full border-2 border-primary/20 px-8 py-6 text-base font-semibold text-primary transition-all duration-300 hover:bg-primary/5 hover:scale-[1.02]"
-              >
-                <span>Load More Brands</span>
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-            </div>
-          )}
-
-          {/* No Results */}
-          {filteredBrands.length === 0 && (
-            <div className="text-center py-12">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-                <Search className="h-8 w-8 text-muted-foreground" />
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">No brands found</h3>
-              <p className="text-sm text-muted-foreground">
-                Try adjusting your search or filter criteria
-              </p>
-              <Button
-                variant="outline"
-                className="mt-4"
-                onClick={() => {
-                  setSearchQuery("");
-                  setActiveCategory("All Brands");
-                }}
-              >
-                Clear filters
-              </Button>
-            </div>
-          )}
         </div>
       </section>
 

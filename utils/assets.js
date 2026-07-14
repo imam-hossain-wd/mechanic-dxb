@@ -54,6 +54,7 @@ import pinterest from "../assets/social-icon/pinterest.png"
 import youtube from "../assets/social-icon/youtube.png"
 
 import homeHero from "../assets/hero/home-hero.jpg"
+import lIcon from "../assets/logo/car-repair-icon.png"
 
 
 export const socialIcons = {
@@ -61,6 +62,10 @@ facebook,
 instagram,
 pinterest, 
 youtube
+}
+
+export const logoIcon= {
+    lIcon
 }
 
 export const heroImages = {

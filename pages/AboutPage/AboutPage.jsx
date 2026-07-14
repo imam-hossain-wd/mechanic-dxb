@@ -141,14 +141,6 @@ const coreValues = [
   },
 ];
 
-// Stats
-const stats = [
-  { icon: Users, value: "2,000+", label: "Happy Customers" },
-  { icon: Star, value: "4.9/5", label: "Average Rating" },
-  { icon: Clock, value: "12 min", label: "Avg. Response Time" },
-  { icon: Wrench, value: "10,000+", label: "Repairs Done" },
-];
-
 export default function AboutPage() {
   const [animateItems, setAnimateItems] = useState(false);
   const [activeTab, setActiveTab] = useState("mission");
@@ -162,7 +154,7 @@ export default function AboutPage() {
   return (
     <main className="relative overflow-hidden bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 pb-16 md:pt-28 md:pb-20">
+      <section className="relative overflow-hidden bg-primary/10 pt-20 pb-10">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -right-20 top-0 h-[600px] w-[600px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] animate-float-slow rounded-full bg-primary/10 blur-3xl" style={{ animationDelay: '2s' }} />
@@ -213,47 +205,6 @@ export default function AboutPage() {
                 We've been keeping Dubai's cars on the road with professional, reliable, 
                 and affordable mobile mechanic services since 2018.
               </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  className="gap-2 rounded-full bg-primary shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-                  asChild
-                >
-                  <Link href="#mission">
-                    <Target className="h-4 w-4" />
-                    Our Mission
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="gap-2 rounded-full border-2 border-primary/20 text-primary hover:bg-primary/5"
-                  asChild
-                >
-                  <Link href={`tel:${SiteConfig.displayNumber}`}>
-                    <Phone className="h-4 w-4" />
-                    Call Now
-                  </Link>
-                </Button>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="mt-8 flex flex-wrap items-center gap-6">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-10 w-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 ring-2 ring-background" />
-                  ))}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">2,000+ Happy Customers</p>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
-                    ))}
-                    <span className="text-xs font-medium text-muted-foreground ml-1">4.9/5</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right Content - Image */}
@@ -316,34 +267,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 md:py-16 border-y border-border/50 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5"
-              >
-                <div className="mb-2 flex justify-center">
-                  <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                    <stat.icon className="h-5 w-5 text-primary" />
-                  </div>
-                </div>
-                <p className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</p>
-                <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Mission & Vision Section */}
-      <section id="mission" className="py-16 md:py-24">
+      <section id="mission" className="py-10">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
-            <div className="group relative overflow-hidden rounded-3xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10">
+            <div className="group relative overflow-hidden rounded-3xl border border-border/50 bg-primary/10 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-2xl" />
               <div className="relative">
                 <div className="mb-4 flex items-center gap-3">
@@ -369,7 +298,7 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="group relative overflow-hidden rounded-3xl border border-border/50 bg-card/50 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10">
+            <div className="group relative overflow-hidden rounded-3xl border border-border/50 bg-primary/10 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-2xl" />
               <div className="relative">
                 <div className="mb-4 flex items-center gap-3">
