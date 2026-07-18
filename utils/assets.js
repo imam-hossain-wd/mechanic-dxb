@@ -15,6 +15,7 @@ import spareParts from "../assets/services/spare-parts.png";
 import timing from "../assets/services/timing.png";
 import computer from "../assets/services/computer.png";
 
+//Gellery 
 import carRepair1 from "../assets/working-gellery/alternator-repair.jpeg";
 import carRepair2 from "../assets/working-gellery/alternator.jpeg";
 import carRepair3 from "../assets/working-gellery/battery-replacement-2.jpeg";
@@ -36,7 +37,7 @@ import carRepair18 from "../assets/working-gellery/raditor.jpeg";
 import carRepair19 from "../assets/working-gellery/roadsite-assistance.jpeg";
 import carRepair20 from "../assets/working-gellery/underground-parking-car-repair.jpeg";
 
-
+// services-banner
 import acRepair from "../assets/service-banner/ac-repair.png"
 import batteryReplacement from "../assets/service-banner/battery-replacement.jpg"
 import breakpad from "../assets/service-banner/breakpad.jpg"
@@ -47,6 +48,9 @@ import gasRefill from "../assets/service-banner/car-gas-refill.jpg"
 import raditor from "../assets/service-banner/car-raditor-repair.jpg"
 import mechanic from "../assets/service-banner/car-mechanic-service.jpg"
 import emergancyRepair from "../assets/service-banner/emergancy-car-repair-service.jpg"
+import engineOilService from "../assets/service-banner/car-oil-change-service.jpg"
+import transmission from "../assets/service-banner/car-transmission.jpg"
+import carService from "../assets/service-banner/car-service.jpg"
 
 import facebook from "../assets/social-icon/facebook.png"
 import instagram from "../assets/social-icon/instagram.png"
@@ -82,7 +86,11 @@ export const ServiceBanner ={
     gasRefill,
     raditor,
     mechanic,
-    emergancyRepair
+    emergancyRepair,
+    engineOilService,
+    transmission,
+    carService
+    
 }
 
 export const workingImages = {

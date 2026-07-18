@@ -588,32 +588,6 @@ export default function ServiceDetailsPage({ service }) {
                 })}
               </div>
             </div>
-
-            {/* Right Content - Service Icon */}
-            <div className="flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-full bg-primary/5 blur-2xl" />
-                <div className="relative flex h-48 w-48 md:h-56 md:w-56 items-center justify-center rounded-3xl bg-primary/10 backdrop-blur-md border border-primary/20 shadow-2xl shadow-primary/10">
-                  {service?.service_image ? (
-                    <Image
-                      src={service?.service_image}
-                      alt={service?.name || "Service"}
-                      width={120}
-                      height={120}
-                      className="h-24 w-24 md:h-32 md:w-32 object-cover"
-                    />
-                  ) : (
-                    <div className="text-primary">
-                      {getServiceIcon()}
-                    </div>
-                  )}
-                </div>
-                {/* Floating Badge */}
-                <div className="absolute -bottom-2 -right-2 rounded-full bg-primary px-3 py-1 shadow-lg">
-                  <span className="text-[10px] font-bold text-white">24/7</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

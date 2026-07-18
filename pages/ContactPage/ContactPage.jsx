@@ -34,17 +34,17 @@ import {
   Wrench,
   Zap,
   ExternalLink,
- SquareActivity as Twitter,
+  SquareActivity as Twitter,
   SquareActivity as Instagram,
   Play as Youtube,
- SquareActivity as Linkedin
+  SquareActivity as Linkedin
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { SiteConfig } from "@/config/siteConfig";
+import { SiteConfig, socialLinks } from "@/config/siteConfig";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -108,17 +108,11 @@ export default function ContactPage() {
     "Other Service"
   ];
 
-  // Quick stats
-  const stats = [
-    { icon: Users, value: "2,000+", label: "Happy Customers" },
-    { icon: Star, value: "4.9/5", label: "Average Rating" },
-    { icon: Clock, value: "12 min", label: "Avg. Response" },
-    { icon: Award, value: "100%", label: "Satisfaction" },
-  ];
+
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
@@ -133,26 +127,26 @@ export default function ContactPage() {
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
 
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -182,23 +176,11 @@ export default function ContactPage() {
     setTimeout(() => setIsCopied(false), 2000);
   };
 
-  // Social icons mapping
-  const getSocialIcon = (name) => {
-    const icons = {
-      Facebook: null,
-      Instagram: Instagram,
-      Pinterest: null,
-      YouTube: Youtube,
-      Twitter: Twitter,
-      Linkedin: Linkedin
-    };
-    return icons[name] || null;
-  };
 
   return (
     <main className="relative overflow-hidden bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 pt-20 pb-16 md:pt-28 md:pb-20">
+      <section className="relative overflow-hidden bg-primary/10 py-20">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -right-20 top-0 h-[600px] w-[600px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] animate-float-slow rounded-full bg-primary/10 blur-3xl" style={{ animationDelay: '2s' }} />
@@ -206,7 +188,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:50px_50px]" />
           <div className="absolute top-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
           <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
-          
+
           {/* Floating Particles */}
           <div className="absolute inset-0 overflow-hidden">
             {[...Array(20)].map((_, i) => (
@@ -247,42 +229,20 @@ export default function ContactPage() {
             </h1>
 
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              We're here to help! Reach out to us for any questions, emergencies, 
+              We're here to help! Reach out to us for any questions, emergencies,
               or to schedule a service. Our team is available 24/7.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-8 md:py-12 border-y border-border/50 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-xl hover:shadow-primary/5"
-              >
-                <div className="mb-2 flex justify-center">
-                  <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                    <stat.icon className="h-5 w-5 text-primary" />
-                  </div>
-                </div>
-                <p className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</p>
-                <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Main Contact Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 lg:grid-cols-5">
             {/* Contact Info Panel */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="rounded-3xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm shadow-xl">
+              <div className="rounded-3xl border border-border/50 bg-primary/10 p-6 backdrop-blur-sm shadow-xl">
                 <h3 className="mb-6 text-xl font-bold text-foreground flex items-center gap-2">
                   <Heart className="h-5 w-5 text-primary" />
                   Contact Information
@@ -290,14 +250,14 @@ export default function ContactPage() {
 
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
-                    <a
+                    <Link
                       key={index}
                       href={info.action}
                       target={info.title === "Location" ? "_blank" : undefined}
                       rel={info.title === "Location" ? "noopener noreferrer" : undefined}
                       className={cn(
                         "group flex items-start gap-4 rounded-2xl p-4 transition-all duration-300",
-                        "hover:bg-primary/5 border border-transparent hover:border-primary/20"
+                        "hover:bg-primary/5 border border-primary/20"
                       )}
                     >
                       <div className={cn(
@@ -315,68 +275,15 @@ export default function ContactPage() {
                           </p>
                         ))}
                       </div>
-                      {info.title !== "Working Hours" && (
-                        <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handleCopy(info.details[0]);
-                          }}
-                          className="rounded-lg p-2 text-muted-foreground transition-all duration-300 hover:bg-primary/10 hover:text-primary"
-                        >
-                          {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                        </button>
-                      )}
-                    </a>
+                    </Link>
                   ))}
-                </div>
-              </div>
-
-              {/* Emergency Contact */}
-              <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-6 backdrop-blur-sm">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-xl bg-red-500/20 p-3">
-                    <Phone className="h-6 w-6 text-red-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Emergency Support</h4>
-                    <p className="text-sm text-muted-foreground">24/7 Emergency Service Available</p>
-                    <a
-                      href={`tel:${SiteConfig.displayNumber}`}
-                      className="mt-2 inline-flex items-center gap-2 text-lg font-bold text-red-500 hover:underline"
-                    >
-                      {SiteConfig.displayNumber}
-                      <ArrowRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="rounded-3xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
-                <h4 className="mb-4 text-sm font-semibold text-foreground">Connect With Us</h4>
-                <div className="flex gap-3">
-                  {SiteConfig.socialLinks.map((social, index) => {
-                    const Icon = getSocialIcon(social.name);
-                    if (!Icon) return null;
-                    return (
-                      <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-full bg-primary/10 p-3 text-primary transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground"
-                      >
-                        <Icon className="h-5 w-5" />
-                      </a>
-                    );
-                  })}
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="rounded-3xl border border-border/50 bg-card/50 p-6 md:p-8 backdrop-blur-sm shadow-xl">
+              <div className="rounded-3xl border border-border/50 bg-primary/10 p-6 md:p-8 backdrop-blur-sm shadow-xl">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-foreground">Send Us a Message</h3>
                   <p className="text-sm text-muted-foreground">
@@ -565,16 +472,23 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        <div>
+          <h3 className="text-lg font-bold flex items-center gap-2 mb-4">
+            <Headphones className="h-5 w-5 text-primary" />
+            Connect With Us
+          </h3>
+          
+        </div>
       </section>
 
       {/* Map Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
+      <section className="bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
         <div className="container mx-auto px-4">
-          <div className="mb-10 text-center">
-            <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 px-4 py-1.5">
+          <div className="mb-5 text-center">
+            {/* <Badge className="mb-4 bg-primary/20 text-primary border-primary/30 px-4 py-1.5">
               <Map className="mr-2 h-3.5 w-3.5" />
               Find Us
-            </Badge>
+            </Badge> */}
             <h2 className="text-3xl font-bold text-foreground md:text-4xl">
               Visit Our
               <span className="relative mx-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -590,7 +504,7 @@ export default function ContactPage() {
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Map Details */}
             <div className="lg:col-span-1 space-y-4">
-              <div className="rounded-3xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
+              <div className="rounded-3xl border border-border/50 bg-primary/10 p-2 backdrop-blur-sm">
                 <div className="flex items-start gap-3">
                   <div className="rounded-xl bg-primary/10 p-3">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -598,7 +512,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-foreground">Our Address</h4>
                     <p className="text-sm text-muted-foreground">{SiteConfig.location}</p>
-                    <a
+                    <Link
                       href={SiteConfig.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -607,12 +521,12 @@ export default function ContactPage() {
                       <Navigation className="h-4 w-4" />
                       Get Directions
                       <ExternalLink className="h-3 w-3" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm">
+              <div className="rounded-3xl border border-border/50 bg-primary/10 p-2 backdrop-blur-sm">
                 <div className="flex items-start gap-3">
                   <div className="rounded-xl bg-primary/10 p-3">
                     <Truck className="h-5 w-5 text-primary" />
@@ -644,7 +558,7 @@ export default function ContactPage() {
 
             {/* Map Embed */}
             <div className="lg:col-span-2">
-              <div className="overflow-hidden rounded-3xl border border-border/50 bg-card/30 p-2 backdrop-blur-sm shadow-2xl shadow-primary/10">
+              <div className="overflow-hidden rounded-3xl bg-primary/10 p-1 backdrop-blur-sm shadow-2xl shadow-primary/10">
                 <div className="relative overflow-hidden rounded-2xl">
                   <iframe
                     title="Car Repair Mechanic Dubai Location"
@@ -655,9 +569,9 @@ export default function ContactPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-2xl"
+                    className="rounded-2xl w-full h-80 md:h-100"
                   />
-                  
+
                   {/* Map Overlay */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl bg-card/90 px-4 py-2.5 backdrop-blur-sm border border-border/50">
                     <div className="flex items-center gap-2">
@@ -675,6 +589,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      
 
       {/* CTA Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-transparent py-16 md:py-20">
@@ -688,7 +603,7 @@ export default function ContactPage() {
             <Zap className="mr-2 h-3.5 w-3.5" />
             Need Immediate Help?
           </Badge>
-          
+
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
             We're Available
             <span className="relative mx-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -697,9 +612,9 @@ export default function ContactPage() {
             </span>
             For Emergencies
           </h2>
-          
+
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
-            Don't wait! Our team is ready to assist you with any car emergency, 
+            Don't wait! Our team is ready to assist you with any car emergency,
             day or night. Call us now for immediate support.
           </p>
 

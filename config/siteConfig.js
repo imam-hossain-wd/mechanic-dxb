@@ -13,7 +13,8 @@ export const SiteConfig = {
   displayNumber: "+971 56 755 3726",
   numberCallLink: "tel:+971567553726",
   whatsappCallLink: "https://wa.me/971567553726",
-  location: "Al Mankhool, Dubai, United Arab Emirates",
+  location: "Al Mankhool, Dubai, UAE",
+  // location: "Al Mankhool, Dubai, United Arab Emirates",
   streetAddress: "Kuwait St",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
@@ -31,19 +32,19 @@ export const SiteConfig = {
     latitude: "25.2506934",
     longitude: "55.2928436",
   },
+  // Al rigga ..business bay.. al mankhool ..al kerama. silicon Oasis...Jumeirah ..deira
+
 
   serviceAreas: [
-    { name: "Business Bay" },
+    { name: "Al Mankhool" },
     { name: "Al Rigga" },
+    { name: "Business Bay" },
+    { name: "Al Karama" },
     { name: "Dubai Land" },
     { name: "Jumeirah" },
-    { name: "Al Mankhool" },
-    { name: "Trade Center" },
     { name: "Dubai Silicon Oasis" },
-    { name: "Downtown Dubai" },
-    { name: "Za'abeel First" },
-    { name: "Za'abeel Second" },
-    { name: "Al Jaddaf" }
+    { name: "Jumaireh" },
+    { name: "Deira" }
   ],
 
   operatingHours: [
