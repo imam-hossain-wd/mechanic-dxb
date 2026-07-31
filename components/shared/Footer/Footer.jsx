@@ -205,7 +205,7 @@ export function Footer() {
                                         className="group flex items-center gap-2 text-sm text-gray-300 "
                                     >
                                         {/* <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary group-hover:scale-125 transition-all"></div> */}
-                                        <span className="truncate group-hover:translate-x-1 transition-transform">{area?.name}</span>
+                                        <span className="truncate group-hover:translate-x-1 transition-transform">{area?.name} , Dubai - UAE</span>
                                     </p>
 
                                     // <Link

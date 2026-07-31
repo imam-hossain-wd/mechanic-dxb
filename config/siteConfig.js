@@ -5,33 +5,34 @@ import { Mail, MapPin, Phone } from "lucide-react";
 const { facebook, instagram, pinterest, youtube } = socialIcons;
 export const SiteConfig = {
   authorName: "Md Bappi",
-  brandName: "AL SATWA TRADING LLC",
-  url: "https://www.carrepairmechanicdubai.com",
-  email: "alsatwatrading@gmail.com",
-  emailLink: "mailto:alsatwatrading@gmail.com",
-  description: "24/7 Mobile Car Repair in Dubai – Fast, Reliable & At Your Location",
+  brandName: "Auto Lab Car Repair Dubai",
+  url: "https://www.autolabcarrepairdubai.com",
+  email: "autolabcarrepair@gmail.com",
+  emailLink: "mailto:autolabcarrepair@gmail.com",
+  description: "Auto Lab Car Repair Dubai Provide 24/7 Professional , Fast and Reliable Mechanic Service At Your Location in Dubai",
   displayNumber: "+971 56 755 3726",
   numberCallLink: "tel:+971567553726",
   whatsappCallLink: "https://wa.me/971567553726",
   location: "Al Mankhool, Dubai, UAE",
   // location: "Al Mankhool, Dubai, United Arab Emirates",
-  streetAddress: "Kuwait St",
+  streetAddress: "",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
   addressCountry: "AE",
   postalCode: "00000",
-  mapsLink: "https://maps.app.goo.gl/E1HBW8UdW8TqFXpg9",
-  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.1477690094521!2d55.29219986951118!3d25.25069461156736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4390f518213d%3A0x9fee2925019875f!2sAL%20SATWA%20TRADING%20LLC!5e0!3m2!1sen!2sbd!4v1783959628506!5m2!1sen!2sbd",
+  mapsLink: "",
+  embedMap: "",
 
   GMB: {
-    PlaceID: "ChIJPSEY9ZBDXz4RX4cZUJLi_gk",
-    CID: "720262108462810975",
-    BusinessProfileID: "11399040178541034570",
-    mapsLink: "https://maps.app.goo.gl/E1HBW8UdW8TqFXpg9",
-    embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902.1477690094521!2d55.29219986951118!3d25.25069461156736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4390f518213d%3A0x9fee2925019875f!2sAL%20SATWA%20TRADING%20LLC!5e0!3m2!1sen!2sbd!4v1783959628506!5m2!1sen!2sbd",
-    latitude: "25.2506934",
-    longitude: "55.2928436",
+    PlaceID: "",
+    CID: "",
+    BusinessProfileID: "",
+    mapsLink: "",
+    embedMap: "",
+    latitude: "",
+    longitude: "",
   },
+
   // Al rigga ..business bay.. al mankhool ..al kerama. silicon Oasis...Jumeirah ..deira
 
 
@@ -79,10 +80,10 @@ export const SiteConfig = {
   ],
 
   socialLinks: [
-    { name: "Facebook", icon: facebook, href: "https://www.facebook.com" },
-    { name: "Instagram", icon: instagram, href: "https://www.instagram.com" },
-    { name: "Pinterest", icon: pinterest, href: "https://www.pinterest.com" },
-    { name: "YouTube", icon: youtube, href: "https://www.youtube.com" }
+    { name: "Facebook", icon: facebook, href: "" },
+    { name: "Instagram", icon: instagram, href: "" },
+    { name: "Pinterest", icon: pinterest, href: "" },
+    { name: "YouTube", icon: youtube, href: "" }
   ],
 
   contactLinks: [
