@@ -1,184 +1,220 @@
-// components/sections/WhyChooseUsSection.tsx
-"use client";
-
-import { 
-  Shield, 
-  Clock, 
-  Phone, 
-  Star, 
-  Users, 
-  Wrench, 
+import {
+  Shield,
+  Clock,
+  Phone,
+  Star,
+  Users,
+  Wrench,
   Truck,
-  Award,
-  CheckCircle,
-  Sparkles,
-  Zap,
-  HeartHandshake,
+  CheckCircle2,
   BadgeCheck,
   MapPin,
-  Calendar,
   ThumbsUp,
-  Settings,
-  Car,
-  Headphones,
-  CircleCheck,
   ArrowRight,
-  Crown
+  Crown,
+  Sparkles,
+  Zap,
+  Navigation
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
-import { ServiceBanner } from "@/utils/assets";
+import { SiteConfig } from "@/config/siteConfig";
 
 export default function WhyChooseUsSection() {
-  const primaryColor = "bg-primary";
-  const primaryText = "text-primary";
-  const primaryBorder = "border-primary/20";
+  const brandName = SiteConfig?.brandName || "Auto Lab Dubai";
 
-  // Key benefits with detailed information
+  // Schema for Local Business (GEO & Knowledge Graph)
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": brandName,
+    "description": `${brandName} provides 24/7 mobile auto repair, roadside assistance, car battery replacement, and emergency mechanic services across all areas of Dubai within 15 minutes.`,
+    "areaServed": [
+      { "@type": "City", "name": "Dubai" },
+      { "@type": "Place", "name": "Downtown Dubai" },
+      { "@type": "Place", "name": "Dubai Marina" },
+      { "@type": "Place", "name": "Business Bay" },
+      { "@type": "Place", "name": "Al Karama" },
+      { "@type": "Place", "name": "Jumeirah" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "2150"
+    },
+    "priceRange": "$$"
+  };
+
+  // High-Intent GEO/SEO Benefits
   const benefits = [
     {
       icon: Clock,
-      title: "5-15 Minute Response",
-      description: "We arrive at your location within minutes, equipped to handle any emergency.",
-      highlight: "Fastest in Dubai",
-      color: "from-blue-500 to-blue-600",
+      title: "10-15 Min Emergency On-Site Arrival",
+      description: "Fastest mobile mechanic dispatch in Dubai. Fully equipped units stationed across SZR, Business Bay, Marina, and Deira for immediate assistance.",
+      highlight: "Rapid Dispatch",
+      badge: "SZR & Highway Ready"
     },
     {
       icon: Shield,
-      title: "100% Satisfaction Guarantee",
-      description: "All repairs come with a warranty. We're not happy until you're satisfied.",
-      highlight: "Warranty Included",
-      color: "from-emerald-500 to-emerald-600",
+      title: "100% Genuine Parts & Warranty",
+      description: "We use only OEM parts with official warranty for European, American, and Japanese vehicles adapted for Dubai desert heat conditions.",
+      highlight: "OEM Guaranteed",
+      badge: "Full Warranty"
     },
     {
       icon: Wrench,
-      title: "Certified Expert Mechanics",
-      description: "Our team consists of industry-certified professionals with years of experience.",
-      highlight: "Expert Team",
-      color: "from-purple-500 to-purple-600",
+      title: "RTA-Certified Expert Mechanics",
+      description: "Our certified technicians carry advanced computer diagnostics (OBD-II scanner) for high-end luxury and daily commuter vehicles.",
+      highlight: "Master Techs",
+      badge: "All Makes & Models"
     },
     {
       icon: Truck,
-      title: "Mobile Service Anywhere",
-      description: "We come to your location - home, office, or roadside - across all Dubai areas.",
-      highlight: "Cover All Dubai",
-      color: "from-orange-500 to-orange-600",
+      title: "Doorstep & Roadside Mobile Service",
+      description: "From home driveway battery swaps to roadside emergency AC repairs, we bring a complete garage workshop directly to your location.",
+      highlight: "Full Mobile Unit",
+      badge: "24/7 Coverage"
     },
     {
       icon: Phone,
-      title: "24/7 Emergency Support",
-      description: "Day or night, we're here for you. Call us anytime for immediate assistance.",
-      highlight: "Always Available",
-      color: "from-red-500 to-red-600",
+      title: "24/7 Multilingual Emergency Line",
+      description: "Instant dispatch line available day and night. Direct phone support with real-time ETA updates via GPS tracking.",
+      highlight: "Always On",
+      badge: "Zero Waiting Time"
     },
     {
       icon: Star,
-      title: "Transparent Pricing",
-      description: "No hidden fees or surprises. Get clear quotes before any work begins.",
-      highlight: "No Hidden Costs",
-      color: "from-amber-500 to-amber-600",
+      title: "Fixed Upfront Pricing (No Hidden Fees)",
+      description: "Clear cost estimate provided before any wrench turns. Transparent diagnostics report sent directly to your phone.",
+      highlight: "Transparent Costs",
+      badge: "Best Rates Dubai"
     },
   ];
 
-  // Statistics with animations
   const stats = [
-    { value: "98%", label: "Customer Satisfaction", icon: ThumbsUp },
-    { value: "12 min", label: "Average Arrival Time", icon: Clock },
-    { value: "2,000+", label: "Happy Customers", icon: Users },
-    { value: "4.9/5", label: "Average Rating", icon: Star },
+    { value: "98.8%", label: "First-Time Fix Rate", icon: ThumbsUp },
+    { value: "12 min", label: "Avg. Arrival in Dubai", icon: Clock },
+    { value: "15,000+", label: "Vehicles Repaired", icon: Users },
+    { value: "4.9/5", label: "Google Business Rating", icon: Star },
   ];
 
-  // Trust badges
   const trustBadges = [
-    { icon: Shield, label: "Fully Insured" },
-    { icon: BadgeCheck, label: "Certified Mechanics" },
-    { icon: Crown, label: "Premium Service" },
-    { icon: Sparkles, label: "Quality Guaranteed" },
+    { icon: Shield, label: "Insured & Licensed" },
+    { icon: BadgeCheck, label: "RTA Compliant" },
+    { icon: Crown, label: "Luxury Car Specialists" },
+    { icon: Sparkles, label: "100% Satisfaction Guarantee" },
+  ];
+
+  const coverageAreas = [
+    "Downtown Dubai",
+    "Business Bay",
+    "Dubai Marina",
+    "Jumeirah (JBR)",
+    "Al Karama",
+    "Deira & Rigga",
+    "Silicon Oasis",
+    "Arabian Ranches",
+    "Al Barsha",
+    "Sheikh Zayed Road (SZR)"
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background py-8">
-      {/* Ultra-Modern Background */}
-      <div className="absolute inset-0 -z-10">
-        {/* Animated Gradient Orbs */}
-        <div className="absolute -right-20 top-0 h-[700px] w-[700px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute -bottom-40 -left-20 h-[600px] w-[600px] animate-float-slow rounded-full bg-primary/15 blur-3xl" style={{ animationDelay: '2s' }} />
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 animate-float-slow rounded-full bg-primary/5 blur-3xl" style={{ animationDelay: '4s' }} />
-        
-        {/* Dynamic Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:50px_50px]" />
-        
-        {/* Animated Lines */}
-        <div className="absolute top-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-        <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
+    <section
+      className="relative overflow-hidden bg-background py-6"
+      itemScope
+      itemType="https://schema.org/AutoRepair"
+    >
+      {/* Inject JSON-LD Schema for Search Engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute animate-float rounded-full bg-primary/10"
-              style={{
-                width: Math.random() * 4 + 2 + 'px',
-                height: Math.random() * 4 + 2 + 'px',
-                top: Math.random() * 100 + '%',
-                left: Math.random() * 100 + '%',
-                animationDuration: (Math.random() * 12 + 8) + 's',
-                animationDelay: (Math.random() * 6) + 's',
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Diagonal Pattern Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_65%,rgba(99,102,241,0.03)_100%)]" />
+      {/* Modern Background */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute -right-20 top-0 h-[600px] w-[600px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-12 text-center md:mb-16 lg:mb-20">
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
-            <Badge variant="outline" className={cn("border-primary/30 px-4 py-1.5 text-sm font-medium text-primary", primaryBorder)}>
-              Why Choose Us
+        <div className="mb-5 text-center">
+          <div className="mb-3 flex items-center justify-center gap-2">
+            <span className="h-px w-8 bg-primary/50" />
+            <Badge variant="outline" className="border-primary/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+              Dubai's Premier Auto Workshop
             </Badge>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
+            <span className="h-px w-8 bg-primary/50" />
           </div>
 
-          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-            Why Dubai Drivers
-            <span className="relative mx-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Trust Us
-              <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-primary to-primary/30 animate-pulse-slow" />
-            </span>
+          <h2 className="mb-3 text-3xl font-extrabold text-foreground md:text-4xl " itemProp="name">
+            Why Drivers Trust <span className="text-primary">{brandName}</span> Across Dubai
           </h2>
-          
-          <p className="mx-auto max-w-2xl text-base text-muted-foreground md:text-lg">
-            We've earned the trust of thousands of drivers across Dubai through exceptional 
-            service, reliability, and a commitment to excellence.
+
+          <p className="mx-auto max-w-3xl text-base text-gray-700 md:text-lg leading-relaxed" itemProp="description">
+            When your vehicle breaks down in the Dubai heat, you need immediate, certified auto repair.
+            We operate fully equipped mobile garage units delivering rapid roadside emergency repair, battery replacement,
+            and computer diagnostics straight to your location.
           </p>
         </div>
 
-        {/* Stats Bar */}
-        <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 lg:gap-8">
+        {/* Key AEO Direct Answer Block */}
+        <div className="mb-5 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <Zap className="h-6 w-6 text-primary flex-shrink-0" />
+            <h3 className="text-lg font-bold text-foreground md:text-xl">
+              At a Glance: Why {brandName} is Rated #1 for Car Repairs in Dubai
+            </h3>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm text-foreground/90 font-medium">
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>10-15 Min ETA</strong> across all major Dubai highways</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>OEM & Original Parts</strong> with official warranty</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>24/7 Mobile Service</strong> at home, office, or roadside</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>Advanced Computer Diagnostics</strong> for all luxury brands</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>Zero Towing Fees</strong> — we fix it on the spot</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+              <span><strong>Transparent Pricing</strong> prior to service starting</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 p-4 text-center backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:shadow-2xl hover:shadow-primary/5"
+              className="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card p-5 text-center shadow-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative">
-                <div className="mb-2 flex justify-center">
-                  <div className="rounded-full bg-primary/10 p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
-                    <stat.icon className="h-5 w-5 text-primary" />
-                  </div>
+              <div className="mb-2 flex justify-center items-center gap-2">
+                <div className="rounded-full bg-primary w-8 h-8 flex justify-center items-center text-white">
+                  <stat.icon className="h-5 w-5" />
                 </div>
-                <p className="text-2xl font-bold text-foreground md:text-3xl">{stat.value}</p>
-                <p className="text-xs font-medium text-muted-foreground">{stat.label}</p>
+
+                <div className="text-left">
+                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
+                  <p className="text-xs font-semibold text-muted-foreground">{stat.label}</p>
+                </div>
               </div>
+
             </div>
           ))}
         </div>
@@ -186,140 +222,101 @@ export default function WhyChooseUsSection() {
         {/* Benefits Grid */}
         <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
+            <article
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-primary/10 p-6"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="rounded-xl bg-primary p-3 text-white">
+                  <benefit.icon className="h-6 w-6" />
+                </div>
+                <span className="text-[11px] font-bold tracking-wide uppercase text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                  {benefit.badge}
+                </span>
+              </div>
+
+              <h3 className="mb-2 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                {benefit.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {benefit.description}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        {/* Trust Badges */}
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+          {trustBadges.map((badge, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border  p-6 backdrop-blur-sm transition-all duration-500 border-primary/30 bg-primary/5 hover:shadow-2xl shadow-primary/10"
+              className="flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-sm shadow-sm"
             >
-              {/* Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-100" />
-              
-              {/* Top Glow Line */}
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-100 transition-opacity duration-500 " />
-
-              {/* Icon with Glass Effect */}
-              {/* <div className="relative mb-4">
-                <div className="absolute inset-0 rounded-xl bg-primary/10 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className={cn(
-                  "relative inline-flex rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 p-3 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-primary/20",
-                  "border border-primary/10"
-                )}>
-                  <benefit.icon className="h-6 w-6 text-primary" />
-                </div>
-              </div> */}
-
-              {/* Content */}
-              <div className="relative">
-                <div className="mb-1 flex items-center gap-2">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {benefit.title}
-                  </h3>
-                  <span className="text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                    {benefit.highlight}
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-
-              {/* Animated Checkmark on Hover */}
-              <div className="absolute bottom-4 right-4 opacity-100 transition-all duration-500">
-                <CheckCircle className="h-5 w-5 text-primary" />
-              </div>
+              <badge.icon className="h-4 w-4 text-primary" />
+              <span>{badge.label}</span>
             </div>
           ))}
         </div>
 
-        {/* Bottom Section with Trust Badges & CTA */}
-        <div className="space-y-8">
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {trustBadges.map((badge, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 rounded-full border border-border/50 bg-card/30 px-4 py-2 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg"
+        {/* CTA Banner */}
+        <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
+          <div className="relative z-10 flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+            <div>
+              <h3 className="text-2xl font-black md:text-3xl lg:text-4xl">
+                Need an Emergency Mobile Mechanic in Dubai?
+              </h3>
+              <p className="mt-2 max-w-xl text-primary-foreground/90 text-sm md:text-base">
+                Our technicians are on standby across Dubai. Call now for instant mobile dispatch or schedule a diagnostic check at your home or office.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="rounded-full px-8 py-6 text-base font-bold shadow-lg hover:scale-105 transition-transform"
+                asChild
               >
-                <badge.icon className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">{badge.label}</span>
-              </div>
-            ))}
-          </div>
+                <Link href="/contact">
+                  <Phone className="mr-2 h-5 w-5 fill-current" />
+                  Call Emergency Line
+                </Link>
+              </Button>
 
-          {/* CTA Section with Gradient Background */}
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8 md:p-12">
-            {/* Background Elements */}
-            <div className="absolute inset-0">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-2xl" />
-              <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-primary/10 blur-2xl" />
-            </div>
-
-            <div className="relative flex flex-col items-center justify-between gap-6 md:flex-row">
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-bold text-foreground md:text-3xl">
-                  Ready to Experience the
-                  <span className="mx-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                    Difference?
-                  </span>
-                </h3>
-                <p className="mt-2 text-muted-foreground">
-                  Join thousands of satisfied customers who trust us with their cars.
-                </p>
-              </div>
-              
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Button
-                  size="lg"
-                  className={cn(
-                    "group relative overflow-hidden rounded-full px-8 py-6 text-base font-semibold shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/40",
-                    primaryColor
-                  )}
-                  asChild
-                >
-                  <Link href="/contact">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Now
-                    <span className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                  </Link>
-                </Button>
-                
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className={cn(
-                    "group rounded-full border-2 px-8 py-6 text-base font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-primary/5",
-                    primaryBorder,
-                    primaryText
-                  )}
-                  asChild
-                >
-                  <Link href="/services">
-                    <span>View Services</span>
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Area Note */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-center">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 text-primary" />
-              <span>Serving all areas of Dubai including:</span>
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              {["Downtown", "Jumeirah", "Business Bay", "Dubai Marina", "Al Rigga", "Silicon Oasis"].map((area) => (
-                <span
-                  key={area}
-                  className="rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-foreground/70 transition-all duration-300 hover:bg-primary/10 hover:text-primary"
-                >
-                  {area}
-                </span>
-              ))}
-              <span className="text-xs font-semibold text-primary">+ More</span>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-bold transition-all"
+                asChild
+              >
+                <Link href="/services">
+                  <span>Explore Services</span>
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
+
+        {/* GEO Service Area Anchor Footer */}
+        <div className="mt-12 text-center border-t border-border/40 pt-8">
+          <div className="flex items-center justify-center gap-2 text-sm font-semibold text-muted-foreground mb-3">
+            <Navigation className="h-4 w-4 text-primary" />
+            <span>Rapid On-Site Dispatch Covered Areas in Dubai:</span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
+            {coverageAreas.map((area) => (
+              <span
+                key={area}
+                className="rounded-md bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground border border-border/40"
+              >
+                {area}
+              </span>
+            ))}
+            <span className="text-xs font-bold text-primary px-2">+ All UAE Highways</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -59,13 +59,17 @@ import youtube from "../assets/social-icon/youtube.png"
 
 import homeHero from "../assets/hero/home-hero.jpg"
 import lIcon from "../assets/logo/car-repair-icon.png"
-
+import aboutbanner from "../assets/auto-mechanic.jpg";
 
 export const socialIcons = {
 facebook,
 instagram,
 pinterest, 
 youtube
+}
+
+export const banners= {
+    aboutbanner
 }
 
 export const logoIcon= {
