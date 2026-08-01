@@ -129,7 +129,7 @@ export function Maps({ className, variant = "default" }) {
           {/* Left Panel - Information */}
           <div className="lg:col-span-2 space-y-6">
             {/* Main Card */}
-            <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 shadow-2xl shadow-primary/5">
+            <div className="relative overflow-hidden rounded-3xl border border-border/50 p-6 bg-primary/90">
               {/* Decorative Glow */}
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-2xl" />
               <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-primary/5 blur-2xl" />
@@ -137,17 +137,17 @@ export function Maps({ className, variant = "default" }) {
               <div className="relative">
                 {/* Location Badge */}
                 <div className="mb-4 flex items-center gap-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
-                    <Target className="h-5 w-5 text-primary" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary">
+                    <Target className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground">Our Location</p>
-                    <p className="text-sm font-semibold text-foreground">{location}</p>
+                    <p className="text-xs font-medium text-white">Our Location</p>
+                    <p className="text-sm font-semibold text-white">{location}</p>
                   </div>
                 </div>
 
                 {/* Tab Navigation */}
-                <div className="mb-4 flex gap-1 rounded-xl bg-muted/50 p-1">
+                <div className="mb-4 flex gap-1 rounded-xl bg-muted p-1">
                   {[
                     { id: "info", icon: MapPin, label: "Info" },
                     { id: "hours", icon: ClockIcon, label: "Hours" },
@@ -160,7 +160,7 @@ export function Maps({ className, variant = "default" }) {
                         "flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all duration-300",
                         activeTab === tab.id
                           ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                          : "text-muted-foreground hover:bg-primary/5 hover:text-foreground"
+                          : "text- hover:bg-primary/5 hover:text-foreground"
                       )}
                     >
                       <tab.icon className="h-3.5 w-3.5" />
@@ -176,13 +176,13 @@ export function Maps({ className, variant = "default" }) {
                     <div className="space-y-3 animate-fade-in-up">
                       <Link
                         href={numberCallLink}
-                        className="flex items-center gap-3 rounded-xl bg-primary/5 p-3 transition-all duration-300 hover:bg-primary/10"
+                        className="flex items-center gap-3 rounded-xl bg-white p-3"
                       >
-                        <div className="rounded-lg bg-primary/20 p-2">
-                          <Phone className="h-4 w-4 text-primary" />
+                        <div className="rounded-lg bg-primary p-2">
+                          <Phone className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <p className="text-xs text-muted-foreground">Call Now</p>
+                          <p className="text-xs">Call Now</p>
                           <p className="text-sm font-semibold text-foreground">{displayNumber}</p>
                         </div>
                         <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />
@@ -190,13 +190,13 @@ export function Maps({ className, variant = "default" }) {
 
                       <Link
                         href={`mailto:${email}`}
-                        className="flex items-center gap-3 rounded-xl bg-primary/5 p-3 transition-all duration-300 hover:bg-primary/10"
+                        className="flex items-center gap-3 rounded-xl bg-white p-3"
                       >
-                        <div className="rounded-lg bg-primary/20 p-2">
-                          <Mail className="h-4 w-4 text-primary" />
+                        <div className="rounded-lg bg-primary p-2">
+                          <Mail className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <p className="text-xs text-muted-foreground">Email Us</p>
+                          <p className="text-xs">Email Us</p>
                           <p className="text-sm font-semibold text-foreground truncate">{email}</p>
                         </div>
                         <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground" />
@@ -205,13 +205,13 @@ export function Maps({ className, variant = "default" }) {
                       <Link
                         href={mapsLink}
                         target="_blank"
-                        className="flex items-center gap-3 rounded-xl bg-primary/5 p-3 transition-all duration-300 hover:bg-primary/10"
+                        className="flex items-center gap-3 rounded-xl bg-white p-3"
                       >
-                        <div className="rounded-lg bg-primary/20 p-2">
-                          <Navigation className="h-4 w-4 text-primary" />
+                        <div className="rounded-lg bg-primary p-2">
+                          <Navigation className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <p className="text-xs text-muted-foreground">Get Directions</p>
+                          <p className="text-xs">Get Directions</p>
                           <p className="text-sm font-semibold text-foreground">Open in Google Maps</p>
                         </div>
                         <ExternalLink className="ml-auto h-4 w-4 text-muted-foreground" />
@@ -225,7 +225,7 @@ export function Maps({ className, variant = "default" }) {
                       {operatingHours?.slice(0, 7).map((day, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg bg-primary/5 px-3 py-2 transition-all duration-300 hover:bg-primary/10"
+                          className="flex items-center justify-between rounded-lg bg-white px-3 py-2 transition-all duration-300"
                         >
                           <span className="text-sm font-medium text-foreground">{day.day}</span>
                           <div className="flex items-center gap-2">
@@ -246,15 +246,15 @@ export function Maps({ className, variant = "default" }) {
                         {serviceAreas?.map((area, index) => (
                           <span
                             key={index}
-                            className="group flex items-center gap-1.5 rounded-full border border-border/50 bg-card/30 px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:text-foreground"
+                            className="group flex items-center gap-1.5 rounded-full border border-border/50 bg-white px-3 py-1.5 text-xs font-medium"
                           >
-                            <MapPin className="h-3 w-3 text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            <MapPin className="h-3 w-3 text-primary transition-opacity duration-300 group-hover:opacity-100" />
                             {area.name}
                           </span>
                         ))}
                       </div>
-                      <p className="text-xs text-muted-foreground">
-                        <Globe className="inline h-3 w-3 text-primary" />
+                      <p className="text-md text-white mt-2 flex justify-center items-center gap-2">
+                        <Globe className="inline h-3 w-3 text-white" />
                         {" "}Serving all areas across Dubai
                       </p>
                     </div>
@@ -303,8 +303,8 @@ export function Maps({ className, variant = "default" }) {
           </div>
 
           {/* Right Panel - Map */}
-          <div className="lg:col-span-3">
-            <div className="relative overflow-hidden rounded-3xl border border-border/50 bg-card/30 p-2 backdrop-blur-sm shadow-2xl shadow-primary/10">
+          <div className="lg:col-span-3 h-150">
+            <div className="relative overflow-hidden rounded-3xl p-2 backdrop-blur-sm shadow-2xl shadow-primary/10">
               {/* Map Container */}
               <div className="relative overflow-hidden rounded-2xl" ref={mapRef}>
                 {/* Loading State */}

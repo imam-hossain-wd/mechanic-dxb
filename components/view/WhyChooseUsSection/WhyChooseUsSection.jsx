@@ -238,7 +238,7 @@ export default function WhyChooseUsSection() {
               <h3 className="mb-2 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed">
                 {benefit.description}
               </p>
             </article>
@@ -256,67 +256,7 @@ export default function WhyChooseUsSection() {
               <span>{badge.label}</span>
             </div>
           ))}
-        </div>
-
-        {/* CTA Banner */}
-        <div className="relative overflow-hidden rounded-3xl bg-primary text-primary-foreground p-8 md:p-12 shadow-2xl">
-          <div className="relative z-10 flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
-            <div>
-              <h3 className="text-2xl font-black md:text-3xl lg:text-4xl">
-                Need an Emergency Mobile Mechanic in Dubai?
-              </h3>
-              <p className="mt-2 max-w-xl text-primary-foreground/90 text-sm md:text-base">
-                Our technicians are on standby across Dubai. Call now for instant mobile dispatch or schedule a diagnostic check at your home or office.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="rounded-full px-8 py-6 text-base font-bold shadow-lg hover:scale-105 transition-transform"
-                asChild
-              >
-                <Link href="/contact">
-                  <Phone className="mr-2 h-5 w-5 fill-current" />
-                  Call Emergency Line
-                </Link>
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-bold transition-all"
-                asChild
-              >
-                <Link href="/services">
-                  <span>Explore Services</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* GEO Service Area Anchor Footer */}
-        <div className="mt-12 text-center border-t border-border/40 pt-8">
-          <div className="flex items-center justify-center gap-2 text-sm font-semibold text-muted-foreground mb-3">
-            <Navigation className="h-4 w-4 text-primary" />
-            <span>Rapid On-Site Dispatch Covered Areas in Dubai:</span>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
-            {coverageAreas.map((area) => (
-              <span
-                key={area}
-                className="rounded-md bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground border border-border/40"
-              >
-                {area}
-              </span>
-            ))}
-            <span className="text-xs font-bold text-primary px-2">+ All UAE Highways</span>
-          </div>
-        </div>
-
+        </div>  
       </div>
     </section>
   );

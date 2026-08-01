@@ -14,7 +14,6 @@ export const SiteConfig = {
   numberCallLink: "tel:+971567553726",
   whatsappCallLink: "https://wa.me/971567553726",
   location: "Al Mankhool, Dubai, UAE",
-  // location: "Al Mankhool, Dubai, United Arab Emirates",
   streetAddress: "",
   addressLocality: "Dubai",
   addressRegion: "Dubai",

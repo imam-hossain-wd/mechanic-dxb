@@ -278,7 +278,7 @@ import { heroImages, ServiceBanner } from "@/utils/assets";
 
 export default function HomeHero() {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-[#05070d] pt-5">
+        <section className="relative  w-full overflow-hidden bg-[#05070d] pt-5">
             {/* ============================================
           PREMIUM AUTOMOTIVE BACKGROUND
           ============================================ */}
@@ -358,7 +358,7 @@ export default function HomeHero() {
             {/* ============================================
           MAIN CONTENT
           ============================================ */}
-            <div className="container relative mx-auto flex min-h-[calc(100vh-5rem)] flex-col-reverse items-center justify-center px-4 py-5 lg:flex-row lg:gap-16 lg:py-0">
+            <div className="container relative mx-auto flex min-h-[calc(100vh-5rem)] flex-col-reverse items-center justify-center px-4 py-5 lg:flex-row lg:gap-16">
                 {/* LEFT: Text Content */}
                 <div className="relative z-10 flex w-full max-w-2xl flex-col items-start text-left lg:pr-8">
                     {/* Status pill */}
@@ -377,12 +377,12 @@ export default function HomeHero() {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="mb-6 mt-4 md:mt-0 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
-                        Dubai's Fastest
+                    <h1 className="mb-6 mt-4 md:mt-0 text-3xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-5xl">
+                        Dubai's Fastest Mobile
                         <br />
                         <span className="relative inline-block">
                             <span className="bg-primary bg-clip-text text-transparent">
-                                Mobile Mechanic
+                                Car Repair Service
                             </span>
                             <svg
                                 className="absolute -bottom-2 left-0 w-full"
@@ -414,7 +414,7 @@ export default function HomeHero() {
                     </h1>
 
                     {/* Subheadline */}
-                    <p className="mb-8 max-w-xl text-lg leading-relaxed text-white sm:text-xl">
+                    <p className="mb-4 max-w-xl text-md md:text-lg leading-relaxed text-white ">
                         24/7 emergency car repair at your doorstep. Our certified
                         technicians arrive in{" "}
                         <span className="font-semibold">5–15 minutes</span>{" "}
@@ -422,11 +422,11 @@ export default function HomeHero() {
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                    <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:gap-4">
                         <Button
                             size="lg"
                             asChild
-                            className="group relative h-14 overflow-hidden rounded-full border border-primary/30 bg-primary px-8 text-base font-bold text-white shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_-5px_rgba(251,191,36,0.7)]"
+                            className="group relative h-10 lg:h-12 overflow-hidden rounded-full border border-primary/30 bg-primary px-8 text-base font-bold text-white shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_-5px_rgba(251,191,36,0.7)]"
                         >
                             <Link href={SiteConfig?.numberCallLink} className="flex items-center gap-2">
                                 <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -439,7 +439,7 @@ export default function HomeHero() {
                             size="lg"
                             variant="outline"
                             asChild
-                            className="group h-14 rounded-full border border-white/15 bg-white/3 px-8 text-base font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/8"
+                            className="group h-10 lg:h-12  rounded-full border border-white/15 bg-white/3 px-8 text-base font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/8"
                         >
                             <Link href="/services">
                                 View Services
@@ -459,11 +459,11 @@ export default function HomeHero() {
                             <div
                                 key={index}
                                 className={cn(
-                                    "group flex items-center gap-2 rounded-xl border-2 border-primary px-3 py-2.5 backdrop-blur-xl transition-all duration-300 ")}
+                                    "group flex items-center gap-2 rounded-xl border-2 border-primary bg-primary px-3 py-2.5 backdrop-blur-xl transition-all duration-300 ")}
                             >
                                 <item.icon
                                     className={cn(
-                                        "h-4 w-4 transition-transform duration-300 group-hover:scale-110",
+                                        "h-4 w-4 transition-transform text-white duration-300 group-hover:scale-110",
                                     )}
                                 />
                                 <span
@@ -593,36 +593,6 @@ export default function HomeHero() {
                 </div>
             </div>
 
-
-
-            {/* ============================================
-          BOTTOM SERVICE BAR
-          ============================================ */}
-            <div className="absolute bottom-0 left-0 right-0 hidden border-t border-white/[0.06] bg-primary/20 backdrop-blur-xl md:block">
-                <div className="container flex items-center justify-between px-4 py-3">
-                    <span className="flex items-center gap-2 text-xs text-white">
-                        <MapPin className="h-3.5 w-3.5 text-white" />
-                        Serving all Dubai areas
-                    </span>
-                    <div className="flex items-center gap-4">
-                        {SiteConfig.serviceAreas.slice(0, 6).map((area) => (
-                            <span
-                                key={area.name}
-                                className="cursor-default text-xs text-white transition-colors hover:text-primary"
-                            >
-                                {area.name}
-                            </span>
-                        ))}
-                        <span className="flex items-center gap-1 text-xs font-semibold text-white">
-                            More <ChevronRight className="h-3 w-3" />
-                        </span>
-                    </div>
-                    <span className="flex items-center gap-2 text-xs font-medium text-white">
-                        <Phone className="h-3.5 w-3.5 text-white" />
-                        {SiteConfig.displayNumber}
-                    </span>
-                </div>
-            </div>
 
             {/* ============================================
           KEYFRAME ANIMATIONS

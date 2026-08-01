@@ -50,7 +50,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-background py-3">
+    <section className="relative overflow-hidden bg-background py-5">
       {/* Modern Background with Dynamic Elements */}
       <div className="absolute inset-0 -z-10">
         {/* Gradient Orbs */}
@@ -79,10 +79,8 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row justify-between gap-4">
           {/* Left Column - Image & Milestones */}
           <div className="space-y-2 w-full lg:w-[62%]">
-            {/* Image with Modern Overlay */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-primary/10 transition-all duration-500 hover:shadow-primary/20">
-                {/* Decorative Glow */}
                 <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-transparent to-primary/20 blur-xl" />
 
                 <div className="relative rounded-3xl bg-gradient-to-br from-primary/5 to-primary/20 p-2">
@@ -94,7 +92,7 @@ export default function AboutSection() {
                       height={400}
                       className="w-80 md:h-100 md:w-full transition-transform duration-700 hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                    <div className="absolute inset-0" />
                   </div>
                 </div>
               </div>

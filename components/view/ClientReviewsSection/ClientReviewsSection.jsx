@@ -75,7 +75,7 @@ export function ClientReviewsSection() {
   }, [isAutoPlaying, isHovering, totalSlides]);
 
   return (
-    <section className="relative overflow-hidden bg-background py-8">
+    <section className="relative overflow-hidden bg-background py-5">
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute -right-20 top-0 h-[600px] w-[600px] animate-float-slow rounded-full bg-primary/20 blur-3xl" />
@@ -233,43 +233,6 @@ export function ClientReviewsSection() {
               />
             ))}
           </div>
-        </div>
-
-        {/* Bottom Trust Section */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-8 rounded-3xl border border-border/50 bg-card/30 p-6 backdrop-blur-sm">
-          <div className="flex items-center gap-3">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-8 w-8 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 ring-2 ring-background" />
-              ))}
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">Trusted by 2,000+</p>
-              <p className="text-xs text-muted-foreground">Drivers across Dubai</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-              ))}
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">{averageRating} Average</p>
-              <p className="text-xs text-muted-foreground">Based on {totalReviews} reviews</p>
-            </div>
-          </div>
-
-          <Button
-            className="gap-2 rounded-full bg-primary px-6 shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-            asChild
-          >
-            <Link href="/reviews">
-              <MessageCircle className="h-4 w-4" />
-              Leave a Review
-            </Link>
-          </Button>
         </div>
       </div>
     </section>

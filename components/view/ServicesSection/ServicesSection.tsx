@@ -13,7 +13,7 @@ export default function ServicesSection() {
     const [visibleServices, setVisibleServices] = useState(services.slice(0, 8));
 
     return (
-        <section className="relative overflow-hidden bg-background py-10">
+        <section className="relative overflow-hidden bg-background py-5">
             {/* Modern Background */}
             <div className="absolute inset-0 -z-10">
                 <div className="absolute right-0 top-0 h-125 w-125 rounded-full bg-primary/5 blur-3xl" />
@@ -81,23 +81,11 @@ export default function ServicesSection() {
                     ))}
                 </div>
 
-                {/* View All Services CTA */}
-                <div className="mt-12 text-center">
-                    <div className="relative inline-block">
-                        <div className="absolute -inset-1 rounded-full bg-primary/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                        <Button
-                            size="lg"
-                            className="group relative gap-3 rounded-full bg-primary px-8 py-6 text-base font-semibold shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/40"
-                            asChild
-                        >
-                            <Link href="/services">
-                                <span>View All Services</span>
-                                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                                <span className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
+                <Link href="/services" className=" flex justify-center items-center mt-7">
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-4.5 rounded">
+                        All Services <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                </Link>
             </div>
         </section>
     );
