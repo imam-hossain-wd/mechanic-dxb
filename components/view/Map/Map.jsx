@@ -127,7 +127,7 @@ export function Maps({ className, variant = "default" }) {
         {/* Main Content */}
         <div className={`grid gap-8 lg:grid-cols-5 transition-all duration-1000 delay-400 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
           {/* Left Panel - Information */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4">
             {/* Main Card */}
             <div className="relative overflow-hidden rounded-3xl border border-border/50 p-6 bg-primary/90">
               {/* Decorative Glow */}
@@ -263,28 +263,6 @@ export function Maps({ className, variant = "default" }) {
               </div>
             </div>
 
-            {/* Quick Action Buttons */}
-            <div className="flex gap-3">
-              <Button
-                className="flex-1 gap-2 rounded-2xl bg-primary py-6 text-sm font-semibold shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-                asChild
-              >
-                <Link href={numberCallLink}>
-                  <Phone className="h-4 w-4" />
-                  Call Now
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                className="flex-1 gap-2 rounded-2xl border-2 border-primary/20 py-6 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary/5"
-                asChild
-              >
-                <Link href={mapsLink} target="_blank">
-                  <Navigation className="h-4 w-4" />
-                  Directions
-                </Link>
-              </Button>
-            </div>
 
             {/* Mobile Service Badge */}
             <div className="flex items-center justify-center gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4">
@@ -303,13 +281,13 @@ export function Maps({ className, variant = "default" }) {
           </div>
 
           {/* Right Panel - Map */}
-          <div className="lg:col-span-3 h-150">
+          <div className="lg:col-span-3">
             <div className="relative overflow-hidden rounded-3xl p-2 backdrop-blur-sm shadow-2xl shadow-primary/10">
               {/* Map Container */}
               <div className="relative overflow-hidden rounded-2xl" ref={mapRef}>
                 {/* Loading State */}
                 {!isMapLoaded && (
-                  <div className="flex h-[450px] items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
+                  <div className="flex h-[300px] items-center justify-center bg-gradient-to-br from-muted/50 to-muted/30">
                     <div className="text-center">
                       <div className="relative mx-auto mb-4 h-16 w-16">
                         <div className="h-16 w-16 animate-spin rounded-full border-4 border-primary border-t-transparent" />
@@ -327,7 +305,7 @@ export function Maps({ className, variant = "default" }) {
                   width="100%"
                   height="450"
                   className={cn(
-                    "transition-opacity duration-700",
+                    "transition-opacity duration-700 h-80 md:h-110",
                     isMapLoaded ? "opacity-100" : "opacity-0"
                   )}
                   style={{ border: 0 }}
@@ -346,19 +324,6 @@ export function Maps({ className, variant = "default" }) {
                   >
                     <LocateFixed className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />
                   </button>
-                </div>
-
-                {/* Location Pin with Pulse */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-3 rounded-full bg-card/95 px-4 py-2.5 shadow-2xl backdrop-blur-sm border border-primary/20">
-                    <div className="relative">
-                      <div className="absolute h-4 w-4 animate-ping-slow rounded-full bg-primary opacity-75" />
-                      <div className="relative h-3 w-3 rounded-full bg-primary" />
-                    </div>
-                    <span className="text-sm font-semibold text-foreground">📍 We are here</span>
-                    <div className="h-4 w-px bg-border" />
-                    <span className="text-xs text-primary">{city}</span>
-                  </div>
                 </div>
 
                 {/* Corner Decorations */}

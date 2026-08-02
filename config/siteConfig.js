@@ -20,7 +20,7 @@ export const SiteConfig = {
   addressCountry: "AE",
   postalCode: "00000",
   mapsLink: "",
-  embedMap: "",
+  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28884.928991405868!2d55.2512200206842!3d25.182436611227814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682def25f457%3A0x3dd4c4097970950e!2sBusiness%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sbd!4v1785665365419!5m2!1sen!2sbd",
 
   GMB: {
     PlaceID: "",
