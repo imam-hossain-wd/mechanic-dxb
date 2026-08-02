@@ -198,20 +198,20 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+        <div className="mb-6 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card p-5 text-center shadow-lg"
+              className="group relative overflow-hidden rounded-2xl border border-primary/20 bg-primary/10 p-2 text-center shadow-lg"
             >
               <div className="mb-2 flex justify-center items-center gap-2">
-                <div className="rounded-full bg-primary w-8 h-8 flex justify-center items-center text-white">
-                  <stat.icon className="h-5 w-5" />
+                <div className="rounded-full bg-primary w-6 h-6 md:w-8 md:h-8 flex justify-center items-center text-white">
+                  <stat.icon className="h-4 w-4" />
                 </div>
 
                 <div className="text-left">
-                  <p className="text-2xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-xs font-semibold text-muted-foreground">{stat.label}</p>
+                  <p className="text-md md:text-xl font-bold ">{stat.value}</p>
+                  <p className="text-[12px] md:font-semibold">{stat.label}</p>
                 </div>
               </div>
 
@@ -220,14 +220,14 @@ export default function WhyChooseUsSection() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
             <article
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-primary/10 p-6"
+              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-primary/10 px-4 py-3"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="rounded-xl bg-primary p-3 text-white">
+                <div className="rounded-xl bg-primary p-2 text-white">
                   <benefit.icon className="h-6 w-6" />
                 </div>
                 <span className="text-[11px] font-bold tracking-wide uppercase text-primary bg-primary/10 px-2.5 py-1 rounded-md">
@@ -235,26 +235,13 @@ export default function WhyChooseUsSection() {
                 </span>
               </div>
 
-              <h3 className="mb-2 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+              <h3 className="mb-2 text-md md:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                 {benefit.description}
               </p>
             </article>
-          ))}
-        </div>
-
-        {/* Trust Badges */}
-        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
-          {trustBadges.map((badge, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-sm shadow-sm"
-            >
-              <badge.icon className="h-4 w-4 text-primary" />
-              <span>{badge.label}</span>
-            </div>
           ))}
         </div>  
       </div>

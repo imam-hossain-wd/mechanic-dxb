@@ -88,21 +88,6 @@ export function Footer() {
                             </p>
                         </div>
 
-                        {/* Trust Badges */}
-                        <div className="flex flex-wrap gap-2">
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
-                                <Clock className="h-3.5 w-3.5 text-primary" />
-                                <span className="text-xs text-gray-300">24/7 Emergency</span>
-                            </div>
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
-                                <Shield className="h-3.5 w-3.5 text-primary" />
-                                <span className="text-xs text-gray-300">Certified Experts</span>
-                            </div>
-                            <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
-                                <Truck className="h-3.5 w-3.5 text-primary" />
-                                <span className="text-xs text-gray-300">Mobile Service</span>
-                            </div>
-                        </div>
 
                         {/* Contact Information Cards */}
                         <div className="space-y-3">
