@@ -61,7 +61,7 @@ export default function AboutSection() {
         {/* Section Header */}
         <div className="mb-4 text-center">
           <h2 className="mb-2 text-2xl font-bold text-foreground md:text-4xl">
-            Dubai's Most Trusted
+            Dubai&lsquo;s Most Trusted
             <span className="relative mx-3 text-primary">
               Mobile Mechanic
               <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-primary" />
@@ -70,7 +70,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="mx-auto max-w-2xl text-base text-gray-700 md:text-lg">
-            We've been keeping Dubai's cars on the road with professional, reliable,
+            We&lsquo;ve been keeping Dubai&lsquo;s cars on the road with professional, reliable,
             and affordable mobile mechanic services since 2018.
           </p>
         </div>
@@ -81,9 +81,9 @@ export default function AboutSection() {
           <div className="space-y-2 w-full lg:w-[62%]">
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-primary/10 transition-all duration-500 hover:shadow-primary/20">
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-transparent to-primary/20 blur-xl" />
+                <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/20 via-transparent to-primary/20 blur-xl" />
 
-                <div className="relative rounded-3xl bg-gradient-to-br from-primary/5 to-primary/20 p-2">
+                <div className="relative rounded-3xl bg-linear-to-br from-primary/5 to-primary/20 p-2">
                   <div className="relative overflow-hidden rounded-2xl">
                     <Image
                       src={banners.aboutbanner}
@@ -143,7 +143,7 @@ export default function AboutSection() {
                 across Dubai. With a team of certified mechanics and state-of-the-art equipment,
                 we bring the workshop to your doorstep. Our mission is to eliminate the hassle of traditional car repairs by offering
                 convenient, transparent, and high-quality service wherever you are in the city.
-                Whether it's an emergency breakdown or routine maintenance, we've got you covered.
+                Whether it&lsquo;s an emergency breakdown or routine maintenance, we&lsquo;ve got you covered.
               </p>
             </div>
 
@@ -160,7 +160,7 @@ export default function AboutSection() {
                     className="group rounded-xl border border-primary/10 bg-primary/10 p-4 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="rounded-full bg-primary p-1.5 flex-shrink-0 mt-0.5">
+                      <div className="rounded-full bg-primary p-1.5 shrink-0 mt-0.5">
                         <value.icon className="h-4 w-4 text-white" />
                       </div>
                       <div>

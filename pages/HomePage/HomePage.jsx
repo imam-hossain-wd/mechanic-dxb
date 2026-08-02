@@ -8,6 +8,8 @@ import { Maps } from '@/components/view/Map/Map'
 import ServicesSection from '@/components/view/ServicesSection/ServicesSection'
 import WhyChooseUsSection from '@/components/view/WhyChooseUsSection/WhyChooseUsSection'
 import BrandsTabsSection from '@/components/view/BrandsTabSection/BrandsTabsSection'
+import { BatteryCarousel } from '@/components/view/BatteryCarousel/BatteryCarousel'
+import BrandsWeService from '@/components/view/BrandsWeService/BrandsWeService'
 
 
 export default function HomePage() {
@@ -17,11 +19,13 @@ export default function HomePage() {
             <ServicesSection />
             <AboutSection />
             <WhyChooseUsSection />
-            <Maps /> 
+            <BatteryCarousel />
+            <BrandsWeService />
+            {/* <BrandsTabsSection /> */}
+            <Maps />
             <ClientReviewsSection />
-            <BrandsTabsSection />
             <FAQSection />
-            <CTABanner/>
+            <CTABanner />
         </div>
     )
 }
