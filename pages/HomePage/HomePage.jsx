@@ -7,6 +7,8 @@ import HomeHero from '@/components/view/Hero/HomeHero'
 import { Maps } from '@/components/view/Map/Map'
 import ServicesSection from '@/components/view/ServicesSection/ServicesSection'
 import WhyChooseUsSection from '@/components/view/WhyChooseUsSection/WhyChooseUsSection'
+import BrandsTabsSection from '@/components/view/BrandsTabSection/BrandsTabsSection'
+
 
 export default function HomePage() {
     return (
@@ -17,6 +19,7 @@ export default function HomePage() {
             <WhyChooseUsSection />
             <Maps /> 
             <ClientReviewsSection />
+            <BrandsTabsSection />
             <FAQSection />
             <CTABanner/>
         </div>
