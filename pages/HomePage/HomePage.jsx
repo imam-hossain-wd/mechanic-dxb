@@ -10,12 +10,14 @@ import WhyChooseUsSection from '@/components/view/WhyChooseUsSection/WhyChooseUs
 import BrandsTabsSection from '@/components/view/BrandsTabSection/BrandsTabsSection'
 import { BatteryCarousel } from '@/components/view/BatteryCarousel/BatteryCarousel'
 import BrandsWeService from '@/components/view/BrandsWeService/BrandsWeService'
+import HowItWorks from '@/components/view/HowItWorks/HowItWorks'
 
 
 export default function HomePage() {
     return (
         <div className="">
             <HomeHero />
+            <HowItWorks />
             <ServicesSection />
             <AboutSection />
             <WhyChooseUsSection />

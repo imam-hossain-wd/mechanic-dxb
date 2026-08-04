@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { banners, ServiceBanner } from "@/utils/assets";
 import { SiteConfig } from "@/config/siteConfig";
+import Link from "next/link";
 
 export default function AboutSection() {
 
@@ -59,17 +60,10 @@ export default function AboutSection() {
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-4 text-center">
-          <h2 className="mb-2 text-2xl font-bold text-foreground md:text-4xl">
-            Dubai&lsquo;s Most Trusted
-            <span className="relative mx-3 text-primary">
-              Mobile Mechanic
-              <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-primary" />
-            </span>
-            Service
-          </h2>
+        <div className="mb-4 ">
+          <h2 className="text-2xl md:text-xl text-center font-bold"><span className="text-primary">Dubai&lsquo;s Most Trusted</span> Mobile Car Repair Service</h2>
 
-          <p className="mx-auto max-w-2xl text-base text-gray-700 md:text-lg">
+          <p className="mx-auto text-center max-w-2xl text-base text-gray-700 md:text-lg mt-3">
             We&lsquo;ve been keeping Dubai&lsquo;s cars on the road with professional, reliable,
             and affordable mobile mechanic services since 2018.
           </p>
@@ -138,7 +132,12 @@ export default function AboutSection() {
                 <h3 className="text-lg font-semibold text-foreground">Who We Are</h3>
               </div>
               <p className="text-base text-gray-700 leading-relaxed">
-                <span className="font-semibold text-primary">{SiteConfig?.brandName}</span> is a premier mobile auto repair service
+                <span className="font-semibold text-primary">
+                  <Link href={SiteConfig?.GMB?.mapsLink} target="_blank">
+                    {SiteConfig?.brandName}
+                  </Link>
+
+                </span> is a premier mobile auto repair service
                 dedicated to providing fast, reliable, and professional car repair solutions
                 across Dubai. With a team of certified mechanics and state-of-the-art equipment,
                 we bring the workshop to your doorstep. Our mission is to eliminate the hassle of traditional car repairs by offering

@@ -135,30 +135,32 @@ export function BatteryCarousel() {
             >
               <div className="relative flex items-center justify-center p-4 rounded-2xl border border-primary/10 bg-primary/10 hover:border-primary/30 hover:bg-primary/5 transition-all duration-300">
                 {/* Battery Image */}
-                <div className="relative w-14 h-14 md:w-20 md:h-20">
-                  {battery.image ? (
+                <div className="relative w-20 h-20 md:w-20 md:h-20">
+                  {battery.image &&
                     <Image
                       src={battery.image}
                       alt={battery.name}
-                      fill
-                      className="object-contain "
+                      // fill
+                      className=" w-28 h-22"
                     />
-                  ) : (
-                    <div className="w-full h-full rounded-full bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                      <span className="text-xs font-bold text-primary">
-                        {battery.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
+                  // ) : (
+                  //   <div className="w-full h-full rounded-full bg-linear-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  //     <span className="text-xs font-bold text-primary">
+                  //       {battery.name.charAt(0)}
+                  //     </span>
+                  //   </div>
+                  // )
+                  }
                 </div>
 
-                {/* Battery Name - visible on hover */}
+                {/* Battery Name - visible on hover
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2  duration-300">
                   <span className="text-xs font-medium   px-1.5 py-0.5 rounded">
                     {battery.name}
                   </span>
-                </div>
+                </div> */}
               </div>
+              
             </div>
           ))}
         </div>

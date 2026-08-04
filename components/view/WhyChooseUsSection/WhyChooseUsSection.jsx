@@ -51,7 +51,7 @@ export default function WhyChooseUsSection() {
   const benefits = [
     {
       icon: Clock,
-      title: "10-15 Min Emergency On-Site Arrival",
+      title: "5-15 Min Emergency On-Site Arrival",
       description: "Fastest mobile mechanic dispatch in Dubai. Fully equipped units stationed across SZR, Business Bay, Marina, and Deira for immediate assistance.",
       highlight: "Rapid Dispatch",
       badge: "SZR & Highway Ready"
@@ -145,34 +145,32 @@ export default function WhyChooseUsSection() {
           <div className="mb-3 flex items-center justify-center gap-2">
             <span className="h-px w-8 bg-primary/50" />
             <Badge variant="outline" className="border-primary/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              Dubai's Premier Auto Workshop
+              Dubai&lsquo;s Premier Auto Workshop
             </Badge>
             <span className="h-px w-8 bg-primary/50" />
           </div>
 
           <h2 className="mb-3 text-3xl font-extrabold text-foreground md:text-4xl " itemProp="name">
-            Why Drivers Trust <span className="text-primary">{brandName}</span> Across Dubai
+            Why Drivers Trust <span className="text-primary">{brandName}</span>
           </h2>
 
           <p className="mx-auto max-w-3xl text-base text-gray-700 md:text-lg leading-relaxed" itemProp="description">
-            When your vehicle breaks down in the Dubai heat, you need immediate, certified auto repair.
-            We operate fully equipped mobile garage units delivering rapid roadside emergency repair, battery replacement,
-            and computer diagnostics straight to your location.
+            Certified mechanics delivering instant battery, diagnostic, and emergency repairs straight to your doorstep backed by honest pricing and guaranteed service.
           </p>
         </div>
 
         {/* Key AEO Direct Answer Block */}
         <div className="mb-5 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8">
           <div className="flex items-center gap-3 mb-4">
-            <Zap className="h-6 w-6 text-primary flex-shrink-0" />
+            {/* <Zap className="h-6 w-6 text-primary flex-shrink-0" /> */}
             <h3 className="text-lg font-bold text-foreground md:text-xl">
-              At a Glance: Why {brandName} is Rated #1 for Car Repairs in Dubai
+              At a Glance: Why <span className="text-primary">{brandName}</span> is Rated #1 for Car Repairs in Dubai
             </h3>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm text-foreground/90 font-medium">
             <li className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-              <span><strong>10-15 Min ETA</strong> across all major Dubai highways</span>
+              <span><strong>5-15 Min ETA</strong> across all major Dubai highways</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
@@ -243,7 +241,7 @@ export default function WhyChooseUsSection() {
               </p>
             </article>
           ))}
-        </div>  
+        </div>
       </div>
     </section>
   );

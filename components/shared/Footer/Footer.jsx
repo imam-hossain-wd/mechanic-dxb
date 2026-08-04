@@ -65,7 +65,7 @@ export function Footer() {
             {/* Grid Pattern Overlay */}
             <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==')]"></div>
 
-            <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div className="container relative mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
                 {/* Main Footer Grid */}
                 <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-12 relative z-10">
@@ -74,12 +74,11 @@ export function Footer() {
                     <div className="lg:col-span-3 space-y-6">
                         {/* Brand Logo & Name */}
                         <Link href={SiteConfig?.GMB?.mapsLink} target="_blank" >
-                            <div className="w-[55%] md:w-full space-y-4 bg-white p-4  rounded">
+                            <div className="w-[90%] space-y-4 bg-white p-4  rounded">
                                 <Logo />
                             </div>
                           
                         </Link>
-
                         <div className="">
                             <p className="text-md text-white mt-2">Professional Auto Care</p>
 
@@ -91,7 +90,7 @@ export function Footer() {
 
                         {/* Contact Information Cards */}
                         <div className="space-y-3">
-                            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary">Get in Touch</h3>
+                            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Get in Touch</h3>
 
 
                             {/* Google Maps Badge */}
@@ -260,7 +259,7 @@ export function Footer() {
 
                         <div className="p-4 bg-linear-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20 ">
                             <div className="flex items-center gap-2 mb-3">
-                                <Clock className="h-4 w-4 text-primary" />
+                                <Clock className="h-4 w-4 text-white" />
                                 <h3 className="text-sm font-semibold">Operating Hours</h3>
                             </div>
                             <div className="space-y-1.5 ">
@@ -302,7 +301,7 @@ export function Footer() {
                 </div>
 
                 {/* Copyright & Bottom Bar */}
-                <div className="mt-12 pt-8 border-t border-white/10 relative z-10">
+                <div className="mt-6 pt-8 border-t border-white/10 relative z-10">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="text-center md:text-left">
                             <p className="text-xs text-gray-400">
@@ -313,7 +312,7 @@ export function Footer() {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                        {/* <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                             {footerhrefs?.slice(-3).map((link, index) => (
                                 <Link
                                     key={index}
@@ -324,7 +323,7 @@ export function Footer() {
                                     {link.title}
                                 </Link>
                             ))}
-                        </div>
+                        </div> */}
 
                         <div className="text-xs text-gray-500 flex items-center gap-1">
                             <span>🚗 Mobile Service</span>
