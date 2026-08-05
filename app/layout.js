@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import { Footer } from "@/components/shared/Footer/Footer";
+import FloatingActionButtons from "@/components/shared/FloatingActionButtons/FloatingActionButtons";
+import SchemaScript from "@/Seo/Schemas/SchemaScript";
 
 
 
@@ -35,6 +37,8 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <main>
           <Navbar />
+          <SchemaScript />
+          <FloatingActionButtons />
           {children}
         </main>
         <Footer />

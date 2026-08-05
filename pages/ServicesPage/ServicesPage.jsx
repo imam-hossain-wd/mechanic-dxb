@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 // app/services/page.jsx
 "use client";
 
@@ -33,6 +34,7 @@ import { Input } from "@/components/ui/input";
 import { SiteConfig } from "@/config/siteConfig";
 import { services } from "@/data/services/services";
 import { ServiceCard } from "@/components/shared/ServiceCard/ServiceCard";
+import Image from "next/image";
 
 // Service categories
 const categories = [
@@ -115,7 +117,7 @@ export default function ServicesPage() {
     });
 
     // Paginate services
-    const paginatedServices = sortedServices.slice(0, visibleServices);
+    const paginatedServices = sortedServices;
 
     // Animation on scroll
     useEffect(() => {

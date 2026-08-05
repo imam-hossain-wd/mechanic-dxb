@@ -1,4 +1,4 @@
-import { serviceImages } from "@/utils/assets";
+import { ServiceBanner, serviceImages } from "@/utils/assets";
 
 export const windowMotorRepair = {
     title: "Car Window Motor Repair Dubai | Power Window Not Working Fix Near You",
@@ -18,7 +18,7 @@ export const windowMotorRepair = {
     slug: "car-window-motor-repair-dubai",
 
     service_image: serviceImages?.spareParts,
-
+    service_banner:ServiceBanner.windowMotor,
     intro: {
         heading: "Professional Car Window Motor Repair Service in Dubai",
         subheading: "Fast Repair for Stuck, Slow, or Non-Working Power Windows",

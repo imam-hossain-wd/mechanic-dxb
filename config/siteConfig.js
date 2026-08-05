@@ -1,14 +1,14 @@
-
 import { socialIcons } from "@/utils/assets";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const { facebook, instagram, pinterest, youtube } = socialIcons;
+
 export const SiteConfig = {
   authorName: "Md Bappi",
   brandName: "Auto Lab Car Repair Dubai",
   url: "https://www.autolabcarrepairdubai.com",
   email: "autolabcarrepair@gmail.com",
-  foundedYear:"2018",
+  foundedYear: "2018",
   emailLink: "mailto:autolabcarrepair@gmail.com",
   description: "Auto Lab Car Repair Dubai Provide 24/7 Professional , Fast and Reliable Mechanic Service At Your Location in Dubai",
   displayNumber: "+971 56 755 3726",
@@ -33,19 +33,48 @@ export const SiteConfig = {
     longitude: "",
   },
 
-  // Al rigga ..business bay.. al mankhool ..al kerama. silicon Oasis...Jumeirah ..deira
-
+  services: [
+    { name: "Car Battery Replacement", slug: "car-battery-replacement" },
+    { name: "Jump Start Car", slug: "jump-start-car" },
+    { name: "Car Computer Diagnostic", slug: "car-computer-diagnostic" },
+    { name: "Car Alternator Repair", slug: "car-alternator-repair" },
+    { name: "Car Fuel Pump Repair", slug: "car-fuel-pump-repair" },
+    { name: "Car Starter Motor Repair", slug: "car-starter-motor-repair" },
+    { name: "Car AC Repair", slug: "car-ac-repair" },
+    { name: "Car Window Motor Repair", slug: "car-window-motor-repair" },
+    { name: "Radiator Replacement", slug: "radiator-replacement" },
+    { name: "ABS System Repair", slug: "abs-system-repair" },
+    { name: "Brake Pad Repair", slug: "brake-pad-repair" },
+    { name: "Car Detailing Service", slug: "car-detailing-service" },
+    { name: "Emergency Car Repair", slug: "emergency-car-repair" },
+    { name: "Car Mechanic Service", slug: "car-mechanic-service" },
+    { name: "Oil Change Service", slug: "oil-change-service" },
+    { name: "Car AC Gas Refill Service", slug: "car-ac-gas-refill-service" },
+    { name: "Car Transmission Repair", slug: "car-transmission-repair" },
+    { name: "Car Service Dubai", slug: "car-service-dubai" },
+    { name: "Car Repair Dubai", slug: "car-repair-dubai" }
+  ],
 
   serviceAreas: [
-    { name: "Al Mankhool" },
-    { name: "Al Rigga" },
     { name: "Business Bay" },
-    { name: "Al Karama" },
-    { name: "Dubai Land" },
-    { name: "Jumeirah" },
     { name: "Dubai Silicon Oasis" },
-    { name: "Jumaireh" },
-    { name: "Deira" }
+    { name: "DIFC" },
+    { name: "Downtown Dubai" },
+    { name: "Nad Al Sheba" },
+    { name: "Al Barsha" },
+    { name: "Al Barsha South" },
+    { name: "Barsha Heights" },
+    { name: "Al Sufouh" },
+    { name: "Al Quoz Industrial" },
+    { name: "Dubai Hills Estate" },
+    { name: "Jumeirah" },
+    { name: "Al Wasl" },
+    { name: "Al Bada'a" },
+    { name: "City Walk" },
+    { name: "Al Warqa" },
+    { name: "Warsan" },
+    { name: "Academic City" },
+    { name: "Liwan" }
   ],
 
   operatingHours: [
@@ -88,12 +117,13 @@ export const SiteConfig = {
 
   contactLinks: [
     { name: "Map", icon: MapPin, href: "" },
-    { name: "Phone", icon: Phone, href: this?.numberCallLink },
-    { name: "Email", icon: Mail, href: this?.emailLink }
+    { name: "Phone", icon: Phone, href: "" },
+    { name: "Email", icon: Mail, href: "" }
   ]
 };
 
 export const {
+  services,
   contactLinks,
   socialLinks,
   footerhrefs,
@@ -105,8 +135,6 @@ export const {
   addressRegion,
   addressCountry,
   postalCode,
-  latitude,
-  longitude,
   mapsLink,
   numberCallLink,
   whatsappCallLink,

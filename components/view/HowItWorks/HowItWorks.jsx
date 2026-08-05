@@ -77,9 +77,13 @@ export default function HowItWorks() {
             <div className="container mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center mb-10">
-                    <Badge variant="outline" className="border-primary/30 text-primary mb-3">
-                        How It Works
-                    </Badge>
+                    <div className="mb-4 flex items-center justify-center gap-2">
+                        <div className="h-px w-12 bg-primary/30" />
+                        <span className="text-sm font-medium uppercase tracking-wider text-primary">
+                           How It Works
+                        </span>
+                        <div className="h-px w-12 bg-primary/30" />
+                    </div>
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
                         Simple{" "}
                         <span className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">

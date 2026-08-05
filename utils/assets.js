@@ -37,20 +37,6 @@ import carRepair18 from "../assets/working-gellery/raditor.jpeg";
 import carRepair19 from "../assets/working-gellery/roadsite-assistance.jpeg";
 import carRepair20 from "../assets/working-gellery/underground-parking-car-repair.jpeg";
 
-// services-banner
-import acRepair from "../assets/service-banner/ac-repair.png"
-import batteryReplacement from "../assets/service-banner/battery-replacement.jpg"
-import breakpad from "../assets/service-banner/breakpad.jpg"
-import jumpstart from "../assets/service-banner/car-battery-jump-start.jpg"
-import computerDiagnostic from "../assets/service-banner/car-computer-diagnostic.jpg"
-import detailing from "../assets/service-banner/car-detailing-service.png"
-import gasRefill from "../assets/service-banner/car-gas-refill.jpg"
-import raditor from "../assets/service-banner/car-raditor-repair.jpg"
-import mechanic from "../assets/service-banner/car-mechanic-service.jpg"
-import emergancyRepair from "../assets/service-banner/emergancy-car-repair-service.jpg"
-import engineOilService from "../assets/service-banner/car-oil-change-service.jpg"
-import transmission from "../assets/service-banner/car-transmission.jpg"
-import carService from "../assets/service-banner/car-service.jpg"
 
 import facebook from "../assets/social-icon/facebook.png"
 import instagram from "../assets/social-icon/instagram.png"
@@ -60,17 +46,6 @@ import youtube from "../assets/social-icon/youtube.png"
 import homeHero from "../assets/hero/home-hero.jpg"
 import lIcon from "../assets/logo/car-repair-icon.png"
 import aboutbanner from "../assets/auto-mechanic.jpg";
-
-// import bosch from "../assets/batteries/bosch.jpg"
-// import acDelco from "../assets/batteries/AC Delco.jpg"
-// import amaron from "../assets/batteries/amaron.jpg"
-// import duracell from "../assets/batteries/Duracell.jpg"
-// import energizer from "../assets/batteries/Energizer.jpg"
-// import exide from "../assets/batteries/Exide.jpg"
-// import mitsubishi from "../assets/batteries/Mitsubishi.jpg"
-// import optima from "../assets/batteries/Optima.jpg"
-// import varta from "../assets/batteries/Varta.jpg"
-// import yuasa from "../assets/batteries/Yuasa.jpg"
 
 
 // battery brands
@@ -143,6 +118,23 @@ import nissan from '../assets/brand/Japanese/nissan-icon.jpg';
 import toyota from '../assets/brand/Japanese/toyota-icon.jpg';
 
 
+// services-banner
+import acRepair from "../assets/service-banner/ac-repair.png"
+import batteryReplacement from "../assets/service-banner/battery-replacement.jpg"
+import breakpad from "../assets/service-banner/breakpad.jpg"
+import jumpstart from "../assets/service-banner/car-battery-jump-start.jpg"
+import computerDiagnostic from "../assets/service-banner/car-computer-diagnostic.jpg"
+import detailing from "../assets/service-banner/car-detailing-service.png"
+import gasRefill from "../assets/service-banner/car-gas-refill.jpg"
+import raditor from "../assets/service-banner/car-raditor-repair.jpg"
+import mechanic from "../assets/service-banner/car-mechanic-service.jpg"
+import emergancyRepair from "../assets/service-banner/emergancy-car-repair-service.jpg"
+import engineOilService from "../assets/service-banner/car-oil-change-service.jpg"
+import transmission from "../assets/service-banner/car-transmission.jpg"
+import carService from "../assets/service-banner/car-service.jpg"
+import alternator from "../assets/service-banner/alternator-repair.jpg"
+import fuelPump from "../assets/service-banner/car-fuel-pump.jpg"
+import windowMotor from "../assets/service-banner/car-window-motor.png"
 
 
 export const socialIcons = {
@@ -151,6 +143,27 @@ export const socialIcons = {
     pinterest,
     youtube
 }
+
+export const ServiceBanner = {
+    acRepair,
+    batteryReplacement,
+    breakpad,
+    jumpstart,
+    computerDiagnostic,
+    detailing,
+    gasRefill,
+    raditor,
+    mechanic,
+    emergancyRepair,
+    engineOilService,
+    transmission,
+    carService,
+    windowMotor,
+    fuelPump,
+    alternator
+
+}
+
 
 
 
@@ -249,22 +262,7 @@ export const heroImages = {
     homeHero
 }
 
-export const ServiceBanner = {
-    acRepair,
-    batteryReplacement,
-    breakpad,
-    jumpstart,
-    computerDiagnostic,
-    detailing,
-    gasRefill,
-    raditor,
-    mechanic,
-    emergancyRepair,
-    engineOilService,
-    transmission,
-    carService
 
-}
 
 export const workingImages = {
     carRepair1,
