@@ -65,6 +65,7 @@ export function WorkGallery() {
             window.removeEventListener("keydown", handleKeyDown);
             document.body.style.overflow = "";
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedImage, currentIndex]);
 
     return (
