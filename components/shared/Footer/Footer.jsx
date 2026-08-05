@@ -168,7 +168,7 @@ export function Footer() {
                                         href={`/services/${service.slug}`}
                                         className="group flex items-center gap-2 text-sm text-gray-300 hover:text-primary transition-all duration-200"
                                     >
-                                        <span className="group-hover:translate-x-1 transition-transform">{service.name}</span>
+                                        <span className="group-hover:translate-x-1 transition-transform">Mobile {service.name}</span>
                                     </Link>
                                 ))}
                             </nav>

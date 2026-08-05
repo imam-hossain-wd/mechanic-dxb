@@ -77,14 +77,14 @@ export default function AboutSection() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-primary/10 transition-all duration-500 hover:shadow-primary/20">
                 <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/20 via-transparent to-primary/20 blur-xl" />
 
-                <div className="relative rounded-3xl bg-linear-to-br from-primary/5 to-primary/20 p-2">
+                <div className="relative container mx-auto rounded-3xl bg-linear-to-br from-primary/5 to-primary/20 p-2">
                   <div className="relative overflow-hidden rounded-2xl">
                     <Image
                       src={banners.aboutbanner}
                       alt="Car Repair Mechanic Dubai Team"
                       width={600}
                       height={400}
-                      className="w-80 md:h-100 md:w-full transition-transform duration-700 hover:scale-105"
+                      className="w-full  h-50 md:h-100 md:w-full transition-transform duration-700 hover:scale-105"
                     />
                     <div className="absolute inset-0" />
                   </div>

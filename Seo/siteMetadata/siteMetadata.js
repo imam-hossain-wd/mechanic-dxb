@@ -36,6 +36,14 @@ export const siteMetadata = {
       canonical: `${SiteConfig?.url}/brands`
     }
   },
+  // Gallery (/gallery)
+  gallery: {
+    title: "Dubai Mobile Car Repair Gallery | Real On-Site Work Photos",
+    description: "See our mobile mechanics in action across Dubai. Browse real photos of doorstep battery replacements, emergency roadside fixes, and AC servicing.",
+    alternates: {
+      canonical: `${SiteConfig?.url}/gallery`
+    }
+  },
 
   // Contact Us (/contact)
   contact: {
