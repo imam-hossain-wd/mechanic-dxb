@@ -11,6 +11,7 @@ import BrandsTabsSection from '@/components/view/BrandsTabSection/BrandsTabsSect
 import { BatteryCarousel } from '@/components/view/BatteryCarousel/BatteryCarousel'
 import BrandsWeService from '@/components/view/BrandsWeService/BrandsWeService'
 import HowItWorks from '@/components/view/HowItWorks/HowItWorks'
+import { WorkGallery } from '@/components/view/WorkGallery/WorkGallery'
 
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
             <WhyChooseUsSection />
             <BatteryCarousel />
             <BrandsWeService />
+            <WorkGallery />
             {/* <BrandsTabsSection /> */}
             <Maps />
             <ClientReviewsSection />
