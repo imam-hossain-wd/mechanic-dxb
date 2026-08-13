@@ -42,6 +42,7 @@ import facebook from "../assets/social-icon/facebook.png"
 import instagram from "../assets/social-icon/instagram.png"
 import pinterest from "../assets/social-icon/pinterest.png"
 import youtube from "../assets/social-icon/youtube.png"
+import x from "../assets/social-icon/x.png"
 
 import homeHero from "../assets/hero/home-hero.jpg"
 import lIcon from "../assets/logo/car-repair-icon.png"
@@ -141,7 +142,8 @@ export const socialIcons = {
     facebook,
     instagram,
     pinterest,
-    youtube
+    youtube,
+    x
 }
 
 export const ServiceBanner = {

@@ -433,7 +433,6 @@ export default function HomeHero() {
                             <Image
                                 src={heroImages?.homeHero}
                                 alt="Professional Car Mechanic Dubai"
-                                fill
                                 className="h-full w-full"
                                 priority
                             />

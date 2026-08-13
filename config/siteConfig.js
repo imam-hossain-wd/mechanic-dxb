@@ -1,30 +1,30 @@
 import { socialIcons } from "@/utils/assets";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-const { facebook, instagram, pinterest, youtube } = socialIcons;
+const { facebook, instagram, pinterest, youtube, x } = socialIcons;
 
 export const SiteConfig = {
   authorName: "Md Bappi",
-  brandName: "Auto Lab Car Repair Dubai",
-  url: "https://www.autolabcarrepairdubai.com",
-  email: "autolabcarrepair@gmail.com",
+  brandName: "Onfix Car Repair Mechanic Dubai",
+  url: "https://www.onfixcarrepairdubai.com",
+  email: "onfixcarrepair@gmail.com",
   foundedYear: "2018",
-  emailLink: "mailto:autolabcarrepair@gmail.com",
-  description: "Auto Lab Car Repair Dubai Provide 24/7 Professional , Fast and Reliable Mechanic Service At Your Location in Dubai",
-  displayNumber: "+971 56 755 3726",
-  numberCallLink: "tel:+971567553726",
-  whatsappCallLink: "https://wa.me/971567553726",
-  location: "Al Mankhool, Dubai, UAE",
-  streetAddress: "",
+  emailLink: "mailto:onfixcarrepair@gmail.com",
+  description: "Onfix Car Repair Mechanic Dubai Provide 24/7 Professional , Fast and Reliable Mechanic Service At Your Location in Dubai",
+  displayNumber: "+971 54 141 6509",
+  numberCallLink: "tel:+971541416509",
+  whatsappCallLink: "https://wa.me/971541416509",
+  location: "Nadd Hessa - Industrial Area , Dubai, UAE",
+  streetAddress: "60 Street",
   addressLocality: "Dubai",
   addressRegion: "Dubai",
   addressCountry: "AE",
-  postalCode: "00000",
-  mapsLink: "",
-  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28884.928991405868!2d55.2512200206842!3d25.182436611227814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682def25f457%3A0x3dd4c4097970950e!2sBusiness%20Bay%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sbd!4v1785665365419!5m2!1sen!2sbd",
-
+  mapsLink: "https://maps.app.goo.gl/BazzBtwgpRdgFzwT7",
+  embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28898.635290817074!2d55.36598682055146!3d25.124551732046235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f646c9e2a6135%3A0xad180ec0217770f6!2sNadd%20Hessa%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sbd!4v1786551085558!5m2!1sen!2sbd",
   GMB: {
+    name:"OnFix Car Repair Mechanic Dubai",
     PlaceID: "",
+    category: "Auto Repair Shop",
     CID: "",
     BusinessProfileID: "",
     mapsLink: "https://maps.app.goo.gl/xCsHRiMYSnpPw93N9",
@@ -56,25 +56,17 @@ export const SiteConfig = {
   ],
 
   serviceAreas: [
+    { name: "Dubai International City" },
+    { name: "Al Warqa 1" },
+    { name: "Al Warqa 2" },
+    { name: "Al Warqa 3" },
+    { name: "Midriff" },
+    { name: "Warsan 2" },
+    { name: "City Lamd Mall" },
     { name: "Business Bay" },
-    { name: "Dubai Silicon Oasis" },
     { name: "DIFC" },
-    { name: "Downtown Dubai" },
-    { name: "Nad Al Sheba" },
-    { name: "Al Barsha" },
-    { name: "Al Barsha South" },
-    { name: "Barsha Heights" },
-    { name: "Al Sufouh" },
-    { name: "Al Quoz Industrial" },
-    { name: "Dubai Hills Estate" },
-    { name: "Jumeirah" },
-    { name: "Al Wasl" },
-    { name: "Al Bada'a" },
-    { name: "City Walk" },
-    { name: "Al Warqa" },
-    { name: "Warsan" },
-    { name: "Academic City" },
-    { name: "Liwan" }
+    { name: "Zabeel Park" },
+    { name: "Al Jadaf" },
   ],
 
   operatingHours: [
@@ -109,10 +101,11 @@ export const SiteConfig = {
   ],
 
   socialLinks: [
-    { name: "Facebook", icon: facebook, href: "" },
-    { name: "Instagram", icon: instagram, href: "" },
-    { name: "Pinterest", icon: pinterest, href: "" },
-    { name: "YouTube", icon: youtube, href: "" }
+    { name: "Facebook", icon: facebook, href: "https://www.facebook.com/onfixcarrepairdubai" },
+    { name: "Instagram", icon: instagram, href: "https://www.instagram.com/onfixcarrepairdubai/" },
+    { name: "Pinterest", icon: pinterest, href: "https://www.pinterest.com/onfixcarrepairdubai/" },
+    { name: "X", icon: x, href: "https://x.com/onfixcarrepair" },
+    { name: "YouTube", icon: youtube, href: "https://www.youtube.com/@onfixcarrepairdubai" }
   ],
 
   contactLinks: [

@@ -5,10 +5,22 @@ export const siteMetadata = {
   home: {
     title: "24/7 Mobile Car Repair Service Dubai | Fast 5-15 Min Car Repair & Workshop",
     description: "Stranded in Dubai? Auto Lab delivers 24/7 certified mobile car repair & on-site battery, AC, brake, & starter fixes in 5-15 mins—or visit our Al Mankhool garage. Call now!",
+    verification: {
+      google: "ytYG9-y7sI4wREsZZ3xJie3eyAobbPCbKz6vCRA8Gz4",
+    },
     alternates: {
       canonical: SiteConfig?.url,
     }
   },
+
+  //   export const metadata = {
+  //   title: 'OnFix Car Repair Dubai',
+  //   description: 'Car Repair Services in Dubai',
+  //   verification: {
+  //     google: 'আপনার_Search_Console_এর_HTML_Tag_Code',
+  //   },
+  // };
+  // <meta name="google-site-verification" content="ytYG9-y7sI4wREsZZ3xJie3eyAobbPCbKz6vCRA8Gz4" />
 
   // Services Main Hub (/services)
   services: {

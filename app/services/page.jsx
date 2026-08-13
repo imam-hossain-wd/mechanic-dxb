@@ -1,4 +1,4 @@
-import ServicesPage from '@/pages/ServicesPage/ServicesPage'
+import ServicesPage from '@/pages/ServicesPage/ServicesPage';
 import { siteMetadata } from '@/Seo/siteMetadata/siteMetadata'
 import React from 'react'
 

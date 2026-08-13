@@ -14,10 +14,12 @@ import HowItWorks from '@/components/view/HowItWorks/HowItWorks'
 import { WorkGallery } from '@/components/view/WorkGallery/WorkGallery'
 
 
+
 export default function HomePage() {
     return (
         <div className="">
             <HomeHero />
+            {/* <Logo /> */}
             <HowItWorks />
             <ServicesSection />
             <AboutSection />

@@ -13,48 +13,14 @@ import {
   Award,
   Heart,
   Phone,
-  Mail,
-  MapPin,
-  ArrowRight,
   CheckCircle,
-  Sparkles,
   Zap,
-  Truck,
-  Calendar,
-  BadgeCheck,
-  Globe,
   Building2,
   Target,
   Eye,
-  Lightbulb,
-  Handshake,
-  TrendingUp,
-  Quote,
-  Play,
-  PlayCircle,
+ 
   MessageCircle,
-  ThumbsUp,
-  Crown,
-  Flame,
-  Compass,
-  Navigation,
-  Briefcase,
-  GraduationCap,
   Trophy,
-  Medal,
-  Users2,
-  HandHeart,
-  ShieldCheck,
-  Clock8,
-  AwardIcon,
-  StarIcon,
-  Check,
-  ChevronRight,
-  ExternalLink,
-  Linkedin,
-  Twitter,
-  Facebook,
-  Instagram
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -148,6 +114,7 @@ export default function AboutPage() {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAnimateItems(true);
   }, []);
 
@@ -164,7 +131,7 @@ export default function AboutPage() {
           <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
           
           {/* Floating Particles */}
-          <div className="absolute inset-0 overflow-hidden">
+          {/* <div className="absolute inset-0 overflow-hidden">
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
@@ -179,7 +146,7 @@ export default function AboutPage() {
                 }}
               />
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="container mx-auto px-4">
@@ -194,15 +161,15 @@ export default function AboutPage() {
               </div>
 
               <h1 className="mb-4 text-4xl font-bold text-foreground md:text-5xl lg:text-6xl">
-                Dubai's Most Trusted
-                <span className="relative mx-3 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Dubai&lsquo;s Most Trusted
+                <span className="relative mx-3 bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                   Mobile Mechanic
-                  <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-gradient-to-r from-primary to-primary/30 animate-pulse-slow" />
+                  <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-linear-to-r from-primary to-primary/30 animate-pulse-slow" />
                 </span>
               </h1>
 
               <p className="mb-6 text-lg text-muted-foreground">
-                We've been keeping Dubai's cars on the road with professional, reliable, 
+                We&lsquo;ve been keeping Dubai&lsquo;s cars on the road with professional, reliable, 
                 and affordable mobile mechanic services since 2018.
               </p>
             </div>
@@ -218,11 +185,11 @@ export default function AboutPage() {
                       alt="Car Repair Mechanic Dubai Team"
                       width={500}
                       height={400}
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                      className="h-auto md:h-80 w-125 object-cover transition-transform duration-700 hover:scale-105"
                     />
                     
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-background/50 via-transparent to-transparent" />
                     
                     {/* Floating Badges */}
                     <div className="absolute -left-4 top-8 animate-float-slow rounded-xl border border-primary/20 bg-card/90 px-4 py-3 shadow-xl backdrop-blur-sm">

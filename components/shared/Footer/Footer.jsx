@@ -77,7 +77,7 @@ export function Footer() {
                             <div className="w-[90%] space-y-4 bg-white p-4  rounded">
                                 <Logo />
                             </div>
-                          
+
                         </Link>
                         <div className="">
                             <p className="text-md text-white mt-2">Professional Auto Care</p>
@@ -168,7 +168,7 @@ export function Footer() {
                                         href={`/services/${service.slug}`}
                                         className="group flex items-center gap-2 text-sm text-gray-300 hover:text-primary transition-all duration-200"
                                     >
-                                        <span className="group-hover:translate-x-1 transition-transform">Mobile {service.name}</span>
+                                        <span className="group-hover:translate-x-1 transition-transform">{service.name}</span>
                                     </Link>
                                 ))}
                             </nav>
@@ -235,7 +235,7 @@ export function Footer() {
                                 <Headphones className="h-5 w-5 text-primary" />
                                 Connect With Us
                             </h3>
-                            <div className="flex  gap-3">
+                            <div className="flex  gap-2">
                                 {socialLinks?.map((social, index) => {
                                     // const Icon = social.icon;
                                     return (
@@ -247,9 +247,8 @@ export function Footer() {
                                             className="group relative"
                                             aria-label={social.name}
                                         >
-                                            <div className="p-3 bg-white/5 rounded-xl hover:bg-primary transition-all duration-300 hover:scale-110 border border-white/10 hover:border-primary/50">
-                                                {/* <Icon className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /> */}
-                         <Image className="w-7 h-7" src={social?.icon} width={30} height={30} alt={social.name} />
+                                            <div className="p-2 bg-white/5 rounded-xl hover:bg-primary transition-all duration-300 hover:scale-110 border border-white/10 hover:border-primary/50">
+                                                <Image className="w-7 h-7" src={social?.icon} width={30} height={30} alt={social.name} />
                                             </div>
                                         </Link>
                                     );

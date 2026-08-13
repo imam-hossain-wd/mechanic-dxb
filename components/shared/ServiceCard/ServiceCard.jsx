@@ -28,11 +28,13 @@ export const ServiceCard = ({ service, featured, className }) => {
                     <Image
                         src={service.service_banner}
                         alt={service.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        width={500}
+                        height={300}
+                        className="w-full h-auto"
+                        // className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                 ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                    <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-primary/10 to-primary/5">
                         <span className="text-sm font-medium text-primary/60">{service.name}</span>
                     </div>
                 )}

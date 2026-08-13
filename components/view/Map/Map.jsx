@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 // components/ui/AdvancedMap.tsx
 "use client";
 
@@ -81,7 +82,7 @@ export function Maps({ className, variant = "default" }) {
         <div className="absolute bottom-0 h-px w-full animate-gradient-x bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{ animationDelay: '1s' }} />
 
         {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
@@ -96,7 +97,7 @@ export function Maps({ className, variant = "default" }) {
               }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="container mx-auto px-4">

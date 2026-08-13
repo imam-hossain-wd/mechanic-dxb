@@ -1,36 +1,43 @@
-// components/FloatingActionButtons.jsx
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, MessageCircle, X } from "lucide-react";
+import { Phone, MessageCircle, X, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SiteConfig } from "@/config/siteConfig";
 import { Button } from "@/components/ui/button";
 
 export default function FloatingActionButtons() {
     const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
     const [isExpanded, setIsExpanded] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                setIsVisible(false);
-            } else {
-                setIsVisible(true);
-            }
-            setLastScrollY(currentScrollY);
-        };
 
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+  // Show scroll-to-top button when user scrolls down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  // Smooth scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
     const toggleExpand = () => {
         setIsExpanded(!isExpanded);
     };
+
 
     const { displayNumber, numberCallLink, whatsappCallLink } = SiteConfig;
 
@@ -39,7 +46,7 @@ export default function FloatingActionButtons() {
             {/* Floating Container - Right Side */}
             <div
                 className={cn(
-                    "fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 transition-all duration-300",
+                    "fixed bottom-20 right-4 z-50 flex flex-col items-end gap-3 transition-all duration-300",
                     isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
                 )}
             >
@@ -55,7 +62,7 @@ export default function FloatingActionButtons() {
                             <span className="text-xs font-medium text-white whitespace-nowrap">
                                 Call Now
                             </span>
-                            <span className="text-[10px] text-white/70 font-medium">
+                            <span className="text-xs text-white/70 font-medium">
                                 {displayNumber}
                             </span>
                         </Link>
@@ -78,8 +85,19 @@ export default function FloatingActionButtons() {
                     </div>
                 )}
 
+                {isVisible && (
+                    <button
+                        onClick={scrollToTop}
+                        className="mb-10 p-3 bg-primary text-white rounded-full shadow-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+                        aria-label="Scroll to top"
+                    >
+                        <ChevronUp className="h-5 w-5" />
+                    </button>
+                )}
+
+
                 {/* Main Toggle Button */}
-                <button
+                {/* <button
                     onClick={toggleExpand}
                     className={cn(
                         "relative hidden md:flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-105",
@@ -99,40 +117,33 @@ export default function FloatingActionButtons() {
                             </span>
                         </>
                     )}
-                </button>
-
-                {/* Tooltip */}
-                {!isExpanded && (
-                    <div className="hidden md:absolute -top-12 right-0 whitespace-nowrap rounded-lg bg-card/90 px-3 py-1.5 text-xs font-medium text-foreground shadow-lg backdrop-blur-sm border border-border/50">
-                        Need help?
-                        <span className="absolute -bottom-1.5 right-4 h-3 w-3 rotate-45 border-b border-r border-border/50 bg-card/90" />
-                    </div>
-                )}
+                </button> */}
             </div>
 
-            {/* Mobile Bottom Bar - Alternative for mobile */}
-            <div className="fixed bg-black/50 bottom-0 left-0 right-0 z-40 border-t border-border/50 w-full md:hidden">
-                <div className="flex gap-3 items-center justify-around py-2.5 px-4">
+            {/* Mobile Bottom Bar */}
+            {/* backdrop-blur-xl */}
+            <div className="fixed w-full md:w-[30%] mx-auto bottom-0 left-0 right-0 z-40 md:border-0 border-primary ">
+            {/* <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-primary bg-black backdrop-blur-xl md:hidden"> */}
+                <div className="flex items-center justify-around gap-2 py-2.5 px-3">
                     <Link
                         href={numberCallLink}
-                        className="w-full"
+                        className="flex-1"
                     >
-                        <Button className="flex w-full border border-white px-2 py-6  flex-1 items-center justify-center gap-2 rounded bg-primary shadow-lg shadow-primary/20 transition-all active:scale-95">
-
+                        <Button className="flex w-full flex-1 items-center justify-center gap-2 rounded border border-white bg-primary px-2 py-5 shadow-lg shadow-primary/20 transition-all active:scale-95">
                             <Phone className="h-4 w-4 text-white" />
-                            <span className="text-sm font-semibold text-white">Call Now</span>
+                            <span className="text-sm font-semibold text-white">Call Now <span className="hidden md:flex">{displayNumber}</span></span>
                         </Button>
                     </Link>
+
                     <Link
                         href={whatsappCallLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full"
-
+                        className="flex-1"
                     >
-                        <Button className="flex border border-white w-full flex-1 items-center justify-center gap-2 rounded bg-[#25D366] px-2 py-6 shadow-lg shadow-[#25D366]/20 transition-all active:scale-95">
+                        <Button className="flex w-full flex-1 items-center justify-center gap-2 rounded border border-white bg-[#25D366] hover:bg-green-500 px-2 py-5 shadow-lg shadow-[#25D366]/20 transition-all active:scale-95">
                             <MessageCircle className="h-4 w-4 text-white" />
-                            <span className="text-sm font-semibold text-white">WhatsApp</span>
+                            <span className="text-sm font-semibold text-white">WhatsApp <span className="text-xs hidden md:flex">Chat Now</span></span>
                         </Button>
                     </Link>
                 </div>

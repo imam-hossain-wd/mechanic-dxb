@@ -279,7 +279,7 @@ export function BatteryCarousel() {
           {batteries.map((battery) => (
             <div className="bg-primary/10 rounded-xl flex justify-center items-center" key={battery?.id}>
               <div>
-                  <Image className="w-18 h-18" src={battery.image} alt={battery.name} width={100} height={100} quality={100} />
+                  <Image className="w-18 h-18" src={battery.image} alt={battery.name} width={100} height={100} quality={75} />
               </div>
             </div>
           ))}
