@@ -10,15 +10,11 @@ import {
   Phone,
 } from "lucide-react";
 import { SiteConfig } from "@/config/siteConfig";
-// import Logo from "../Logo/Logo";
 import { DesktopNav } from "./NavMenus";
 import { MobileDrawerNav } from "./MobileNavDrawer";
 import Logo from "../Logo/Logo";
+// import Logo from "../Logo/ILogo";
 
-
-// Mobile Drawer Navigation
-
-// Get Quote Button
 
 
 const NavCallButton = () => {
@@ -106,6 +102,7 @@ export const Navbar = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/">
+              {/* <Logo /> */}
               <Logo />
             </Link>
 

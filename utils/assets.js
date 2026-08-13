@@ -118,7 +118,7 @@ import skoda from '../assets/brand/others/skoda-icon.jpg';
 import nissan from '../assets/brand/Japanese/nissan-icon.jpg';
 import toyota from '../assets/brand/Japanese/toyota-icon.jpg';
 
-
+import logo from "../assets/logo/repair (1).png"
 // services-banner
 import acRepair from "../assets/service-banner/ac-repair.png"
 import batteryReplacement from "../assets/service-banner/battery-replacement.jpg"
@@ -257,7 +257,8 @@ export const banners = {
 }
 
 export const logoIcon = {
-    lIcon
+    lIcon,
+    logo
 }
 
 export const heroImages = {

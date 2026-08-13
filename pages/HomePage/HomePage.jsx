@@ -7,11 +7,11 @@ import HomeHero from '@/components/view/Hero/HomeHero'
 import { Maps } from '@/components/view/Map/Map'
 import ServicesSection from '@/components/view/ServicesSection/ServicesSection'
 import WhyChooseUsSection from '@/components/view/WhyChooseUsSection/WhyChooseUsSection'
-import BrandsTabsSection from '@/components/view/BrandsTabSection/BrandsTabsSection'
 import { BatteryCarousel } from '@/components/view/BatteryCarousel/BatteryCarousel'
 import BrandsWeService from '@/components/view/BrandsWeService/BrandsWeService'
 import HowItWorks from '@/components/view/HowItWorks/HowItWorks'
 import { WorkGallery } from '@/components/view/WorkGallery/WorkGallery'
+import Logo from '@/components/shared/Logo/ILogo'
 
 
 

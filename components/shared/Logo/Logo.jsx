@@ -68,41 +68,45 @@
 // }
 
 // components/shared/Logo.jsx
-"use client";
 
-import Link from "next/link";
-import { Wrench, Sparkles } from "lucide-react";
+
 import Image from "next/image";
 import { logoIcon } from "@/utils/assets";
 
 export default function Logo() {
   return (
-    <div className="flex items-center gap-2 group">
+    <div className="flex flex-col items-center gap-1 group">
       {/* Premium Badge Container */}
-      <div className="relative">
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-primary/10 blur-md transition-all duration-500 group-hover:blur-xl" />
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl transition-all duration-500 bg-primary shadow-lg shadow-primary/30">
-          <Image 
-            src={logoIcon.lIcon} 
-            width={30} 
-            height={30} 
-            alt="logo Icon" 
-            className="w-7 h-7" 
+      <div className="relative flex  items-center ">
+        {/* <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-primary/10 blur-md transition-all duration-500 group-hover:blur-xl" /> */}
+
+        <div className="flex items-center justify-center ">
+          <Image
+            src={logoIcon.logo}
+            width={300}
+            height={300}
+            alt="logo Icon"
+            quality={75}
+            className="w-9 h-8"
           />
+        </div>
+        <div className="flex items-center ">
+          <span className="text-lg md:text-2xl font-extrabold tracking-tight text-primary">
+            OnFix
+          </span>
         </div>
       </div>
 
-      <div className="flex flex-col leading-tight">
-        <div className="flex items-center gap-1.5">
-          <span className="text-lg md:text-xl font-extrabold tracking-tight text-primary">
-            OnFix
+      {/* <div className="flex flex-col leading-tight"> */}
+
+        <div className="relative flex flex-col items-center justify-center gap-1">
+          {/* <div className="h-0.5 w-10 bg-primary" /> */}
+          <span className="text-[10px] tracking-normal  text-gray-900">
+            Car Repair Mechanic Dubai
           </span>
-          <Sparkles className="h-3 w-3 text-primary/60" />
+          <div className="h-0.5 w-30 bg-primary" />
         </div>
-        <span className="text-[10px] font-medium tracking-wider uppercase">
-          Car Repair Dubai
-        </span>
-      </div>
+      {/* </div> */}
     </div>
   );
 }
