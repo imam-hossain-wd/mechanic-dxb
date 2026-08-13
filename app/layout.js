@@ -33,9 +33,6 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      {/* <head>
-        <meta name="p:domain_verify" content="f8adcdf39af61a7491fd4fc6379fa955" />
-      </head> */}
       <GoogleTagManager gtmId="G-WTKM96FLVR" />
       <body className="min-h-full flex flex-col">
         <main>
